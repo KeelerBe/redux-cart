@@ -8,7 +8,7 @@ const ProductItem = ({ product }) => (
 			productName={product.productName}
 			price={product.price}
 			available={product.available}
-			vendorName={product.userId}
+			vendorName={product.vendorName}
 		/>
 		<button>Add to cart</button>
 	</div>
@@ -19,7 +19,7 @@ ProductItem.propTypes = {
 		productName: PropTypes.string.isRequired,
 		price: PropTypes.number.isRequired,
 		available: PropTypes.number.isRequired,
-		userId: PropTypes.string.isRequired
+		vendorName: PropTypes.string.isRequired
 	}).isRequired
 }
 

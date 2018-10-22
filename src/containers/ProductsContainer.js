@@ -7,7 +7,7 @@ const ProductsContainer = ({ products }) => (
 	<div>
 		<ProductsList>
 			{products.map((product) => (
-				<ProductItem key={product.id} product={product} />
+				<ProductItem key={product.productId} product={product} />
 			))}
 		</ProductsList>
 	</div>
@@ -16,11 +16,11 @@ const ProductsContainer = ({ products }) => (
 ProductsContainer.propTypes = {
 	products: PropTypes.arrayOf(
 		PropTypes.shape({
-			id: PropTypes.string.isRequired,
+			productId: PropTypes.string.isRequired,
 			productName: PropTypes.string.isRequired,
 			price: PropTypes.number.isRequired,
 			available: PropTypes.number.isRequired,
-			userId: PropTypes.string.isRequired
+			vendorName: PropTypes.string.isRequired
 		})
 	).isRequired
 }

@@ -1,0 +1,129 @@
+{
+	"bbeec34e-d71a-4128-8502-5bfef4776b9f": {
+		"userId": "bbeec34e-d71a-4128-8502-5bfef4776b9f",
+		"firstName": "Rebeca",
+		"lastName": "Luettgen",
+		"email": "rebecaluettgen@yahoo.com",
+		"buyer": true,
+		"buyerOrderIds": [],
+		"cartProductIds": [
+			"d7147d7f-b32d-4d75-a86c-527b999fb0c3",
+			"2aca605b-1e89-45b5-ba48-15b6ad334a98"
+		],
+		"vendor": true,
+		"vendorName": "RL Trade",
+		"vendorOrderIds": [],
+		"inventoryProductIds": [
+			"2627095e-31c3-4099-9a89-f0cedcabd989",
+			"81c4752c-583b-421d-8ea4-69e2fca24e44",
+			"22ff52c9-ee39-4736-b6b8-9efa42a7429b",
+			"d5cc48a9-d755-4e95-a069-c067b80511ba",
+			"eeca05d2-84b0-4d4a-8d00-c50a15cb320a",
+			"2bead201-3b9e-4772-a3b9-789658cc98b9",
+			"db8bf420-7c17-48f9-a4b4-fdbf9f2589c1",
+			"4224d21d-d508-40f4-bd79-9daf1131f9ff"
+		]
+	},
+	"c3a659f9-a3f9-47a3-818b-8fd3f081e7c4": {
+		"userId": "c3a659f9-a3f9-47a3-818b-8fd3f081e7c4",
+		"firstName": "Maximo",
+		"lastName": "Effertz",
+		"email": "maximoeffertz@hotmail.com",
+		"buyer": true,
+		"buyerOrderIds": [],
+		"cartProductIds": [],
+		"vendor": false
+	},
+	"3a0fb22e-cbdb-41c4-a10c-aa7d93ba6435": {
+		"userId": "3a0fb22e-cbdb-41c4-a10c-aa7d93ba6435",
+		"firstName": "Sigurd",
+		"lastName": "Bergstrom",
+		"email": "sigurdbergstrom@yahoo.com",
+		"buyer": true,
+		"buyerOrderIds": [],
+		"cartProductIds": [],
+		"vendor": false,
+		"vendorName": null,
+		"vendorOrderIds": null,
+		"inventoryProductIds": null
+	},
+	"df7136da-42dd-48ab-9073-ecc019bacdf1": {
+		"userId": "df7136da-42dd-48ab-9073-ecc019bacdf1",
+		"firstName": "Ryann",
+		"lastName": "Hayes",
+		"email": "ryannhayes@yahoo.com",
+		"buyer": true,
+		"buyerOrderIds": [],
+		"cartProductIds": [],
+		"vendor": false,
+		"vendorName": null,
+		"vendorOrderIds": null,
+		"inventoryProductIds": null
+	},
+	"85bf12a6-a2a3-4c53-b072-f54fd60cead2": {
+		"userId": "85bf12a6-a2a3-4c53-b072-f54fd60cead2",
+		"firstName": "Jamaal",
+		"lastName": "Purdy",
+		"email": "jamaalpurdy@yahoo.com",
+		"buyer": true,
+		"buyerOrderIds": [],
+		"cartProductIds": [],
+		"vendor": false,
+		"vendorName": null,
+		"vendorOrderIds": null,
+		"inventoryProductIds": null
+	},
+	"901117a7-d13e-4b76-8caf-a27d8aefe736": {
+		"userId": "901117a7-d13e-4b76-8caf-a27d8aefe736",
+		"firstName": "Kale",
+		"lastName": "Ziemann",
+		"email": "kaleziemann@hotmail.com",
+		"buyer": false,
+		"buyerOrderIds": null,
+		"cartProductIds": [],
+		"vendor": true,
+		"vendorName": "Kale Shmale",
+		"vendorOrderIds": [],
+		"inventoryProductIds": [
+			"9b66c65f-da32-4558-a9f9-44c1c0a6d5c6",
+			"beb98a98-af1f-467b-a43e-3ce71a9c1f27",
+			"638b6cd4-7c1b-454d-a631-4071e3a87445"
+		]
+	},
+	"efdc1e4e-45ed-41e3-8581-323cdc721c67": {
+		"userId": "efdc1e4e-45ed-41e3-8581-323cdc721c67",
+		"firstName": "Nathaniel",
+		"lastName": "Ernser",
+		"email": "nathanielernser@yahoo.com",
+		"buyer": true,
+		"buyerOrderIds": [],
+		"cartProductIds": [],
+		"vendor": true,
+		"vendorName": "Natter Inc",
+		"vendorOrderIds": [],
+		"inventoryProductIds": [
+			"edf249c9-8e0a-4c16-969d-b1462a405841",
+			"9270f2b0-0441-4c84-8ec5-abda976936c9",
+			"e8ca07e6-c9f4-4d0d-9c14-04e7982128cd",
+			"130c6699-2964-4cfc-989f-a5cab8d7f541",
+			"061106f8-88aa-4125-8a4b-d17751618ce9",
+			"7acbc142-5b9f-40e2-83f4-37032ddd925f",
+			"0a051305-3444-476b-a6cc-a5aaf238a2cf",
+			"08e01ab1-3226-4e9d-88c8-80527338becc",
+			"3e59a0db-1115-4d0a-8018-b1816af37afd"
+		]
+	},
+	"be7b4e65-57cc-467b-8389-6f15756389f2": {
+		"userId": "be7b4e65-57cc-467b-8389-6f15756389f2",
+		"firstName": "Myriam",
+		"lastName": "Reinger",
+		"email": "myriamreinger@yahoo.com",
+		"buyer": true,
+		"buyerOrderIds": [],
+		"cartProductIds": [],
+		"vendor": false,
+		"vendorName": null,
+		"vendorOrderIds": null,
+		"inventoryProductIds": null
+	}
+}

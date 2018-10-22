@@ -1,0 +1,22 @@
+{
+	"breadcrumbs.enabled": true,
+	"workbench.colorCustomizations": {
+		"terminal.ansiRed": "#e94e96",
+		"terminal.ansiGreen": "#20c53c",
+		"terminal.ansiBrightCyan": "#a9ff47"
+	},
+	"editor.fontFamily": "fira code",
+	"editor.lineHeight": 23,
+	"markdown.preview.fontSize": 12,
+	"editor.fontLigatures": true,
+	"terminal.integrated.fontFamily": "fira code",
+	"editor.letterSpacing": 0.5,
+	"prettier.arrowParens": "always",
+	"prettier.useTabs": true,
+	"editor.formatOnSave": true,
+	"prettier.semi": false,
+	"prettier.eslintIntegration": true,
+	"eslint.autoFixOnSave": true,
+	"html.format.wrapAttributes": "aligned-multiple",
+	"prettier.singleQuote": true
+}

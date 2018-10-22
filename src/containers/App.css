@@ -9,8 +9,13 @@
 #inventory,
 #orders,
 #products {
+	height: 50vh;
 	background-color: #f2f2f2;
 	padding-left: 10px;
 	padding-right: 10px;
 	overflow: auto;
+}
+
+#product-item {
+	margin-bottom: 15px;
 }

@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 const Product = ({ productName, price, available, quantity, vendorName }) => (
 	<div>
 		<li>
-			<b>Product: </b>
+			<b>Product Name: </b>
 			{productName}
 		</li>
 		<li>
@@ -24,10 +24,12 @@ const Product = ({ productName, price, available, quantity, vendorName }) => (
 				{quantity}
 			</li>
 		) : null}
-		<li>
-			<b>Vendor: </b>
-			{vendorName}
-		</li>
+		{vendorName ? (
+			<li>
+				<b>Vendor: </b>
+				{vendorName}
+			</li>
+		) : null}
 	</div>
 )
 

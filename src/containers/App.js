@@ -8,13 +8,12 @@ import OrdersContainer from './OrdersContainer'
 
 const App = () => (
 	<div id="main">
-		{console.log(selectors.getInventoryProducts())}
 		<ProductsContainer
 			products={selectors.getProducts()}
 			userName={selectors.getUserName()}
 		/>
 		<InventoryContainer />
-		<CartContainer />
+		<CartContainer products={selectors.getCartProducts()} />
 		<OrdersContainer />
 	</div>
 )

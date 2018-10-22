@@ -16,6 +16,7 @@
 	overflow: auto;
 }
 
-#product-item {
+#product-item,
+#cart > div {
 	margin-bottom: 15px;
 }

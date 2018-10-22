@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-const Product = ({ productName, price, available, vendorName }) => (
+const Product = ({ productName, price, available, quantity, vendorName }) => (
 	<div>
 		<li>
 			<b>Product: </b>
@@ -9,12 +9,21 @@ const Product = ({ productName, price, available, vendorName }) => (
 		</li>
 		<li>
 			<b>Price: </b>
-			{price}
+			&#36;
+			{(price / 100).toFixed(2)}
 		</li>
-		<li>
-			<b>Available: </b>
-			{available}
-		</li>
+		{available ? (
+			<li>
+				<b>Available: </b>
+				{available}
+			</li>
+		) : null}
+		{quantity ? (
+			<li>
+				<b>Quantity: </b>
+				{quantity}
+			</li>
+		) : null}
 		<li>
 			<b>Vendor: </b>
 			{vendorName}
@@ -26,6 +35,7 @@ Product.propTypes = {
 	productName: PropTypes.string,
 	price: PropTypes.number,
 	available: PropTypes.number,
+	quantity: PropTypes.number,
 	vendorName: PropTypes.string
 }
 

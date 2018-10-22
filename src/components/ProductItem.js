@@ -7,7 +7,6 @@ const ProductItem = ({ product }) => (
 		<Product
 			productName={product.productName}
 			price={product.price}
-			available={product.available}
 			vendorName={product.vendorName}
 		/>
 		<button>Add to cart</button>
@@ -18,7 +17,6 @@ ProductItem.propTypes = {
 	product: PropTypes.shape({
 		productName: PropTypes.string.isRequired,
 		price: PropTypes.number.isRequired,
-		available: PropTypes.number.isRequired,
 		vendorName: PropTypes.string.isRequired
 	}).isRequired
 }

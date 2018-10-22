@@ -3,9 +3,9 @@ import PropTypes from 'prop-types'
 import ProductsList from '../components/ProductsList'
 import ProductItem from '../components/ProductItem'
 
-const ProductsContainer = ({ products }) => (
+const ProductsContainer = ({ products, userName }) => (
 	<div>
-		<ProductsList>
+		<ProductsList userName={userName}>
 			{products.map((product) => (
 				<ProductItem key={product.productId} product={product} />
 			))}
@@ -14,6 +14,7 @@ const ProductsContainer = ({ products }) => (
 )
 
 ProductsContainer.propTypes = {
+	userName: PropTypes.string.isRequired,
 	products: PropTypes.arrayOf(
 		PropTypes.shape({
 			productId: PropTypes.string.isRequired,

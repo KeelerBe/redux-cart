@@ -4,7 +4,6 @@ import ProductItem from '../components/ProductItem'
 
 // temp:
 import _products from '../api/products.json'
-
 const products = Object.keys(_products).map((key) => _products[key])
 
 const ProductsContaineer = () => (

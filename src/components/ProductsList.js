@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
 const ProductsList = ({ children }) => (
 	<div id="products">
@@ -6,5 +7,9 @@ const ProductsList = ({ children }) => (
 		{children}
 	</div>
 )
+
+ProductsList.propTypes = {
+	children: PropTypes.node
+}
 
 export default ProductsList

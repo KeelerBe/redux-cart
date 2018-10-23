@@ -8,7 +8,7 @@
 #cart,
 #inventory,
 #orders,
-#products {
+#products-list {
 	height: 50vh;
 	background-color: #f2f2f2;
 	padding-left: 10px;
@@ -17,6 +17,31 @@
 }
 
 #product-item,
-#cart > div {
+#cart > div,
+#inventory > div {
 	margin-bottom: 15px;
+}
+
+#products-list,
+#cart {
+	position: relative;
+}
+
+#products-list > section {
+	position: absolute;
+	top: 3%;
+	right: 5%;
+	text-align: right;
+}
+
+#cart > section {
+	position: absolute;
+	top: 3%;
+	right: 5%;
+	text-align: right;
+}
+
+#products-list > section > p,
+#cart > section > p {
+	margin-bottom: 0;
 }

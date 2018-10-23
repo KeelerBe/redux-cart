@@ -1,23 +1,25 @@
 import React from 'react'
-import Product from '../components/Product'
+import PropTypes from 'prop-types'
 
-const Cart = ({ products, total }) => (
+const Cart = ({ children, numOfItems }) => (
 	<div id="cart">
 		<h2>Cart</h2>
-		<p>There are x items in your cart.</p>
-		<p>Total: $0.00</p>
-		{products.map((product) => (
-			<div key={product.productId}>
-				<Product
-					productName={product.productName}
-					price={product.price}
-					quantity={1}
-				/>
-				<button>Remove</button>
-			</div>
-		))}
-		<button>Checkout</button>
+		<section>
+			<p>
+				There are <b>{numOfItems}</b> items in your cart.
+			</p>
+			<button>Checkout</button>
+		</section>
+		<p>
+			Total: <b>$0.00</b>
+		</p>
+		{children}
 	</div>
 )
+
+Cart.propTypes = {
+	children: PropTypes.node,
+	numOfItems: PropTypes.number.isRequired
+}
 
 export default Cart

@@ -14,7 +14,7 @@ const ProductsContainer = ({ products, userName }) => (
 )
 
 ProductsContainer.propTypes = {
-	userName: PropTypes.string.isRequired,
+	userName: PropTypes.string,
 	products: PropTypes.arrayOf(
 		PropTypes.shape({
 			productId: PropTypes.string.isRequired,

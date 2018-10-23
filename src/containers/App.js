@@ -12,7 +12,10 @@ const App = () => (
 			products={selectors.getProducts()}
 			userName={selectors.getUserName()}
 		/>
-		<InventoryContainer />
+		<InventoryContainer
+			products={selectors.getInventoryProducts()}
+			vendorName={selectors.getVendorName()}
+		/>
 		<CartContainer products={selectors.getCartProducts()} />
 		<OrdersContainer />
 	</div>

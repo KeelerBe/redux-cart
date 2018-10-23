@@ -1,7 +1,7 @@
 import _products from './products.json'
 import _users from './users.json'
 
-const getVendorName = (userId) => _users[userId].vendorName
+export const getVendorName = () => _users[userId].vendorName
 
 export const getProducts = () =>
 	Object.keys(_products).map((key) => {

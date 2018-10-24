@@ -23,25 +23,27 @@
 }
 
 #products-list,
-#cart {
+#cart,
+#inventory {
 	position: relative;
 }
 
-#products-list > section {
-	position: absolute;
-	top: 3%;
-	right: 5%;
-	text-align: right;
-}
-
+#products-list > section,
 #cart > section {
 	position: absolute;
 	top: 3%;
-	right: 5%;
+	right: 3%;
 	text-align: right;
 }
 
 #products-list > section > p,
 #cart > section > p {
 	margin-bottom: 0;
+}
+
+#inventory > section {
+	position: absolute;
+	top: 7%;
+	right: 6%;
+	text-align: right;
 }

@@ -1,27 +1,22 @@
 import React from 'react'
-import Product from './Product'
+import PropTypes from 'prop-types'
 
-const Inventory = ({ products, vendorName }) => (
+const Inventory = ({ children, vendorName }) => (
 	<div id="inventory">
 		<h2>Inventory</h2>
 		<p>{vendorName}</p>
-		{products.map((product) => (
-			<div key={product.productId}>
-				<Product
-					productName={product.productName}
-					price={product.price}
-					available={product.available}
-				/>
-				<div>
-					<button>Edit</button>
-					<button>Delete</button>
-				</div>
-			</div>
-		))}
-		<button>
-			<b>Add new product</b>
-		</button>
+		<section>
+			<button>
+				<b>Add new product</b>
+			</button>
+		</section>
+		{children}
 	</div>
 )
+
+Inventory.propTypes = {
+	children: PropTypes.node,
+	vendorName: PropTypes.string.isRequired
+}
 
 export default Inventory

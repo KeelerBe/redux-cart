@@ -67,7 +67,7 @@ input[type='number'] {
 	display: block;
 	margin-top: 10px;
 	margin-bottom: -7px;
-	font-weight: 600;
+	font-weight: 400;
 }
 
 #product-form {
@@ -76,8 +76,10 @@ input[type='number'] {
 	height: 300px;
 	width: 300px;
 	top: 100px;
-	left: 50%;
-	margin-left: -10%;
+	margin-left: auto;
+	margin-right: auto;
+	left: 0;
+	right: 0;
 }
 
 #product-form > div {
@@ -92,6 +94,10 @@ input[type='number'] {
 
 #product-form > div > form > div > button {
 	width: 60px;
+}
+
+#product-form > div > form > div > label {
+	margin-left: 5px;
 }
 
 #product-form > div > form > div:last-child {

@@ -43,7 +43,58 @@
 
 #inventory > section {
 	position: absolute;
-	top: 7%;
+	top: 6%;
 	right: 6%;
 	text-align: right;
+}
+
+#product-form > div > form > div > input {
+	height: 30px;
+	width: 200px;
+	padding-left: 10px;
+	padding-right: 10px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	font-size: 15px;
+	letter-spacing: 0.05em;
+}
+
+input[type='number'] {
+	text-align: right;
+}
+
+#product-form > div > form > div > label {
+	display: block;
+	margin-top: 10px;
+	margin-bottom: -7px;
+	font-weight: 600;
+}
+
+#product-form {
+	background-color: #f2f2f2;
+	position: absolute;
+	height: 300px;
+	width: 300px;
+	top: 100px;
+	left: 50%;
+	margin-left: -10%;
+}
+
+#product-form > div {
+	width: 228px;
+	height: auto;
+	margin: 30px auto 0;
+}
+
+#product-form > div > form > div > button:first-child {
+	margin-right: 10px;
+}
+
+#product-form > div > form > div > button {
+	width: 60px;
+}
+
+#product-form > div > form > div:last-child {
+	width: 130px;
+	margin: 10px auto 0;
 }

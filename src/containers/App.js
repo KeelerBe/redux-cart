@@ -5,12 +5,10 @@ import ProductsContainer from './ProductsContainer'
 import InventoryContainer from './InventoryContainer'
 import CartContainer from './CartContainer'
 import OrdersContainer from './OrdersContainer'
-import ProductForm from '../components/ProductForm'
 
 const App = () => (
 	<div id="main">
-		<ProductForm />
-		{/* <ProductsContainer
+		<ProductsContainer
 			products={selectors.getProducts()}
 			userName={selectors.getUserName()}
 		/>
@@ -19,7 +17,7 @@ const App = () => (
 			vendorName={selectors.getVendorName()}
 		/>
 		<CartContainer products={selectors.getCartProducts()} />
-		<OrdersContainer /> */}
+		<OrdersContainer />
 	</div>
 )
 

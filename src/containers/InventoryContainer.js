@@ -4,22 +4,21 @@ import Inventory from '../components/Inventory'
 import InventoryItem from '../components/InventoryItem'
 
 const InventoryContainer = ({ products, vendorName }) => (
-	<Inventory endorName={vendorName}>
+	<Inventory vendorName={vendorName}>
 		{products.map((product) => (
-			<InventoryItem 
-				key={product.productId}
-				product={product}
-			/>
+			<InventoryItem key={product.productId} product={product} />
 		))}
 	</Inventory>
 )
 
-Inventory.propTypes = {
-	products: PropTypes.arrayOf(PropTypes.shape({
-		productId: PropTypes.string.isRequired,
-		price: PropTypes.number.isRequired,
-		available: PropTypes.number.isRequired
-	})).isRequired,
+InventoryContainer.propTypes = {
+	products: PropTypes.arrayOf(
+		PropTypes.shape({
+			productId: PropTypes.string.isRequired,
+			price: PropTypes.number.isRequired,
+			available: PropTypes.number.isRequired
+		})
+	).isRequired,
 	vendorName: PropTypes.string.isRequired
 }
 

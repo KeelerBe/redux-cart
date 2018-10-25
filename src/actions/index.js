@@ -1,12 +1,15 @@
 import _products from '../api/products.json'
+import _users from '../api/users.json'
 import * as types from '../constants/actionTypes'
 
-const receiveProducts = (products) => ({
+const receiveProducts = (products, users) => ({
 	type: types.RECEIVE_PRODUCTS,
-	products
+	products,
+	users
 })
 
 export const getAllProducts = () => (dispatch) => {
 	const products = _products // data fetching here
-	dispatch(receiveProducts(products))
+	const users = _users
+	dispatch(receiveProducts(products, users))
 }

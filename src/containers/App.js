@@ -8,10 +8,7 @@ import OrdersContainer from './OrdersContainer'
 
 const App = () => (
 	<div id="main">
-		<ProductsContainer
-			// products={selectors.getProducts()}
-			userName={selectors.getUserName()}
-		/>
+		<ProductsContainer />
 		<InventoryContainer
 			products={selectors.getInventoryProducts()}
 			vendorName={selectors.getVendorName()}

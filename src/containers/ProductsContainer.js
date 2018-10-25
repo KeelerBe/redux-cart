@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import { getStoreProducts } from '../reducers'
+import { getCurrentUserName } from '../reducers/users'
 import ProductsList from '../components/ProductsList'
 import ProductItem from '../components/ProductItem'
 
@@ -29,7 +30,8 @@ ProductsContainer.propTypes = {
 }
 
 const mapStateToProps = (state) => ({
-	products: getStoreProducts(state)
+	products: getStoreProducts(state),
+	userName: getCurrentUserName(state.users)
 })
 
 export default connect(mapStateToProps)(ProductsContainer)

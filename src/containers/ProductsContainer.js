@@ -5,12 +5,17 @@ import { getStoreProducts } from '../reducers'
 import { getCurrentUserName } from '../reducers/users'
 import ProductsList from '../components/ProductsList'
 import ProductItem from '../components/ProductItem'
+import { renderGreeting } from '../components/ProductComponents'
 
-const ProductsContainer = ({ products, userName }) => (
+const ProductsContainer = ({ products, userName, onClick }) => (
 	<div>
-		<ProductsList userName={userName || 'user'}>
+		<ProductsList title="Products" section={renderGreeting(userName)}>
 			{products.map((product) => (
-				<ProductItem key={product.productId} product={product} />
+				<ProductItem
+					key={product.productId}
+					product={product}
+					actions={[{ label: 'Add to Cart', onClick: onClick }]}
+				/>
 			))}
 		</ProductsList>
 	</div>
@@ -23,7 +28,6 @@ ProductsContainer.propTypes = {
 			productId: PropTypes.string.isRequired,
 			productName: PropTypes.string.isRequired,
 			price: PropTypes.number.isRequired,
-			available: PropTypes.number.isRequired,
 			vendorName: PropTypes.string.isRequired
 		})
 	).isRequired

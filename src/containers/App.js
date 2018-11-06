@@ -1,6 +1,6 @@
 import React from 'react'
 import './App.css'
-import * as selectors from '../api/selectors'
+import * as selectors from '../api/selectors' /* temp */
 import ProductsContainer from './ProductsContainer'
 import InventoryContainer from './InventoryContainer'
 import CartContainer from './CartContainer'

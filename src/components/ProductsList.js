@@ -1,25 +1,19 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-const renderGreeting = (userName) => (
-	<section>
-		<p>
-			Hello, <b>{userName || 'user'}</b>!
-		</p>
-		<button>{userName ? 'Sign out' : 'Sign in'}</button>
-	</section>
-)
-
-const ProductsList = ({ userName, children }) => (
+const ProductsList = ({ title, section, subheading, children }) => (
 	<div id="products-list">
-		<h2>Products</h2>
-		{renderGreeting(userName)}
+		<h2>{title}</h2>
+		{subheading}
+		{section}
 		{children}
 	</div>
 )
 
 ProductsList.propTypes = {
-	userName: PropTypes.string,
+	title: PropTypes.string.isRequired,
+	subheading: PropTypes.node,
+	section: PropTypes.node,
 	children: PropTypes.node
 }
 

@@ -2,14 +2,14 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Product from './Product'
 
-const CartItem = ({ product, quantity }) => (
+const CartItem = ({ product, quantity, label }) => (
 	<div>
 		<Product
 			productName={product.productName}
 			price={product.price}
 			quantity={quantity || 1}
 		/>
-		<button>Remove</button>
+		<button>{label}</button>
 	</div>
 )
 

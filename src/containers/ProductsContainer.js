@@ -8,7 +8,7 @@ import ProductItem from '../components/ProductItem'
 
 const ProductsContainer = ({ products, userName }) => (
 	<div>
-		<ProductsList userName={userName}>
+		<ProductsList userName={userName || 'user'}>
 			{products.map((product) => (
 				<ProductItem key={product.productId} product={product} />
 			))}

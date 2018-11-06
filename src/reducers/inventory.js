@@ -4,6 +4,11 @@ const INITIAL_STATE = {
 	allIds: []
 }
 
-const inventory = produce((draft, action) => {}, INITIAL_STATE)
+const inventory = produce((draft, action) => {
+	switch (action.type) {
+		default:
+			break
+	}
+}, INITIAL_STATE)
 
 export default inventory

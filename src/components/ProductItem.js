@@ -14,12 +14,13 @@ const ProductItem = ({ product, actions }) => (
 )
 
 ProductItem.propTypes = {
-	// product: PropTypes.shape({
-	// 	productName: PropTypes.string.isRequired,
-	// 	price: PropTypes.number.isRequired,
-	// 	vendorName: PropTypes.string,
-	// 	quantity: PropTypes.number
-	// }).isRequired
+	product: PropTypes.node.isRequired,
+	actions: PropTypes.arrayOf(
+		PropTypes.shape({
+			label: PropTypes.string.isRequired
+			// onclick: PropTypes.func.isRequired
+		})
+	)
 }
 
 export default ProductItem

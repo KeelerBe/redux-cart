@@ -8,7 +8,7 @@ import ProductsList from '../components/ProductsList'
 import ProductItem from '../components/ProductItem'
 import Product from '../components/Product'
 
-const ProductsContainer = ({ products, userName, onClick }) => (
+const ProductsContainer = ({ userName, products, onClick }) => (
 	<div>
 		<ProductsList title="Products" section={renderGreeting(userName)}>
 			{products.map((product) => (

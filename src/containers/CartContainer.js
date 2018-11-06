@@ -6,11 +6,11 @@ import ProductsList from '../components/ProductsList'
 import ProductItem from '../components/ProductItem'
 import Product from '../components/Product'
 
-const CartContainer = ({ products, numOfItems, onClick }) => (
+const CartContainer = ({ numOfItems, total, products, onClick }) => (
 	<ProductsList
 		title="Cart"
 		section={renderCartSummary(numOfItems)}
-		subheading={renderTotal()}
+		subheading={renderTotal(total)}
 	>
 		{products.map((product) => (
 			<ProductItem
@@ -29,6 +29,8 @@ const CartContainer = ({ products, numOfItems, onClick }) => (
 )
 
 CartContainer.propTypes = {
+	// numOfItems: PropTypes.number.isRequired,
+	// total: PropTypes.number.isRequired,
 	products: PropTypes.arrayOf(
 		PropTypes.shape({
 			productId: PropTypes.string.isRequired,
@@ -36,8 +38,7 @@ CartContainer.propTypes = {
 			price: PropTypes.number.isRequired
 			// quantity: PropTypes.number.isRequired
 		})
-	).isRequired,
-	numOfItems: PropTypes.number
+	).isRequired
 }
 
 export default CartContainer

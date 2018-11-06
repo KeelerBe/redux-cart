@@ -3,9 +3,9 @@ import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import { getStoreProducts } from '../reducers'
 import { getCurrentUserName } from '../reducers/users'
+import { renderGreeting } from '../components/Sections'
 import ProductsList from '../components/ProductsList'
 import ProductItem from '../components/ProductItem'
-import { renderGreeting } from '../components/ProductComponents'
 
 const ProductsContainer = ({ products, userName, onClick }) => (
 	<div>

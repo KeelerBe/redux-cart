@@ -1,14 +1,22 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import Inventory from '../components/Inventory'
-import InventoryItem from '../components/InventoryItem'
+import { renderButton } from '../components/Sections'
+import { renderCompanyName } from '../components/Subheadings'
+import ProductsList from '../components/ProductsList'
+import ProductItem from '../components/ProductItem'
 
-const InventoryContainer = ({ products, vendorName }) => (
-	<Inventory vendorName={vendorName}>
+const InventoryContainer = ({ products, vendorName, onEditClick, onDeleteClick }) => (
+	<ProductsList title="Inventory" subheading={renderCompanyName(vendorName)} section={renderButton()}>
 		{products.map((product) => (
-			<InventoryItem key={product.productId} product={product} />
+			<ProductItem 
+				key={product.productId} 
+				product={product} 
+				actions={[
+					{ label: "Edit", onClick: onEditClick }, 
+					{ label: "Delete", onClick: onDeleteClick }
+				]} />
 		))}
-	</Inventory>
+	</ProductsList>
 )
 
 InventoryContainer.propTypes = {

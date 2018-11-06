@@ -9,13 +9,13 @@ const ProductItem = ({ product, actions }) => (
 			price={product.price}
 			vendorName={product.vendorName}
 			quantity={product.quantity}
+			available={product.available}
 		/>
 		{actions.map((action) => (
 			<button key={action.label} onClick={action.onClick}>
 				{action.label}
 			</button>
 		))}
-		{/* {console.log(actions.map((action) => action.label))} */}
 	</div>
 )
 

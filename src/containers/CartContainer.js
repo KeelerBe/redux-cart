@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { renderCartSummary, renderTotal } from '../components/CartComponents'
+import { renderCartSummary } from '../components/Sections'
+import { renderTotal } from '../components/Subheadings'
 import ProductsList from '../components/ProductsList'
 import ProductItem from '../components/ProductItem'
 

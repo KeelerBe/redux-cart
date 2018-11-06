@@ -7,8 +7,6 @@
 	grid-gap: 20px;
 }
 
-#cart,
-#inventory,
 #orders,
 #products-list {
 	height: 50vh;
@@ -18,32 +16,26 @@
 	overflow: auto;
 }
 
-#product-item,
-#cart > div,
-#inventory > div {
+#product-item {
 	margin-bottom: 15px;
 }
 
-#products-list,
-#cart,
-#inventory {
+#products-list {
 	position: relative;
 }
 
-#products-list > section,
-#cart > section {
+#products-list > section {
 	position: absolute;
 	top: 3%;
 	right: 3%;
 	text-align: right;
 }
 
-#products-list > section > p,
-#cart > section > p {
+#products-list > section > p {
 	margin-bottom: 0;
 }
 
-#inventory > section {
+#products-list > #modal {
 	position: absolute;
 	top: 6%;
 	right: 6%;

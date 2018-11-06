@@ -4,17 +4,34 @@ import { renderButton } from '../components/Sections'
 import { renderCompanyName } from '../components/Subheadings'
 import ProductsList from '../components/ProductsList'
 import ProductItem from '../components/ProductItem'
+import Product from '../components/Product'
 
-const InventoryContainer = ({ products, vendorName, onEditClick, onDeleteClick }) => (
-	<ProductsList title="Inventory" subheading={renderCompanyName(vendorName)} section={renderButton()}>
+const InventoryContainer = ({
+	products,
+	vendorName,
+	onEditClick,
+	onDeleteClick
+}) => (
+	<ProductsList
+		title="Inventory"
+		subheading={renderCompanyName(vendorName)}
+		section={renderButton()}
+	>
 		{products.map((product) => (
-			<ProductItem 
-				key={product.productId} 
-				product={product} 
+			<ProductItem
+				key={product.productId}
+				product={
+					<Product
+						productName={product.productName}
+						price={product.price}
+						available={product.available}
+					/>
+				}
 				actions={[
-					{ label: "Edit", onClick: onEditClick }, 
-					{ label: "Delete", onClick: onDeleteClick }
-				]} />
+					{ label: 'Edit', onClick: onEditClick },
+					{ label: 'Delete', onClick: onDeleteClick }
+				]}
+			/>
 		))}
 	</ProductsList>
 )

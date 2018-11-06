@@ -1,16 +1,10 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import Product from './Product'
+// import Product from './Product'
 
 const ProductItem = ({ product, actions }) => (
 	<div id="product-item">
-		<Product
-			productName={product.productName}
-			price={product.price}
-			vendorName={product.vendorName}
-			quantity={product.quantity}
-			available={product.available}
-		/>
+		{product}
 		{actions.map((action) => (
 			<button key={action.label} onClick={action.onClick}>
 				{action.label}
@@ -20,12 +14,12 @@ const ProductItem = ({ product, actions }) => (
 )
 
 ProductItem.propTypes = {
-	product: PropTypes.shape({
-		productName: PropTypes.string.isRequired,
-		price: PropTypes.number.isRequired,
-		vendorName: PropTypes.string,
-		quantity: PropTypes.number
-	}).isRequired
+	// product: PropTypes.shape({
+	// 	productName: PropTypes.string.isRequired,
+	// 	price: PropTypes.number.isRequired,
+	// 	vendorName: PropTypes.string,
+	// 	quantity: PropTypes.number
+	// }).isRequired
 }
 
 export default ProductItem

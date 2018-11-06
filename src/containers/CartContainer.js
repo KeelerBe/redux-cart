@@ -4,6 +4,7 @@ import { renderCartSummary } from '../components/Sections'
 import { renderTotal } from '../components/Subheadings'
 import ProductsList from '../components/ProductsList'
 import ProductItem from '../components/ProductItem'
+import Product from '../components/Product'
 
 const CartContainer = ({ products, numOfItems, onClick }) => (
 	<ProductsList
@@ -14,7 +15,13 @@ const CartContainer = ({ products, numOfItems, onClick }) => (
 		{products.map((product) => (
 			<ProductItem
 				key={product.productId}
-				product={product}
+				product={
+					<Product
+						productName={product.productName}
+						price={product.price}
+						quantity={product.quantity || 1}
+					/>
+				}
 				actions={[{ label: 'Remove', onClick: onClick }]}
 			/>
 		))}

@@ -6,6 +6,7 @@ import { getCurrentUserName } from '../reducers/users'
 import { renderGreeting } from '../components/Sections'
 import ProductsList from '../components/ProductsList'
 import ProductItem from '../components/ProductItem'
+import Product from '../components/Product'
 
 const ProductsContainer = ({ products, userName, onClick }) => (
 	<div>
@@ -13,7 +14,13 @@ const ProductsContainer = ({ products, userName, onClick }) => (
 			{products.map((product) => (
 				<ProductItem
 					key={product.productId}
-					product={product}
+					product={
+						<Product
+							productName={product.productName}
+							price={product.price}
+							vendorName={product.vendorName}
+						/>
+					}
 					actions={[{ label: 'Add to Cart', onClick: onClick }]}
 				/>
 			))}

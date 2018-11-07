@@ -1,9 +1,6 @@
 import { combineReducers } from 'redux'
 import produce from 'immer'
-import {
-	RECEIVE_USERS,
-	RECEIVE_CURRENT_USER_ID
-} from '../constants/actionTypes'
+import { RECEIVE_USERS } from '../constants/actionTypes'
 
 const INITIAL_STATE = {
 	currentUserId: '',
@@ -12,8 +9,8 @@ const INITIAL_STATE = {
 
 const currentUserId = produce((draft, action) => {
 	switch (action.type) {
-		case RECEIVE_CURRENT_USER_ID:
-			return (draft = action.id)
+		case RECEIVE_USERS:
+			return (draft = action.currentUserId)
 		default:
 			break
 	}

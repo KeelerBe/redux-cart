@@ -13,7 +13,7 @@ export const renderGreeting = (userName) => (
 export const renderCartSummary = (numOfItems) => (
 	<section>
 		<p>
-			There are <b>{numOfItems || 0}</b> items in your cart.
+			There are <b>{numOfItems}</b> items in your cart.
 		</p>
 		<button>Checkout</button>
 	</section>

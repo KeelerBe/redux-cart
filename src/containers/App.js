@@ -13,7 +13,7 @@ const App = () => (
 			products={selectors.getInventoryProducts()}
 			vendorName={selectors.getVendorName()}
 		/>
-		<CartContainer products={selectors.getCartProducts()} />
+		<CartContainer />
 		<OrdersContainer />
 	</div>
 )

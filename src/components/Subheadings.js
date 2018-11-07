@@ -2,7 +2,11 @@ import React from 'react'
 
 export const renderTotal = (total) => (
 	<p>
-		Total: <b>{total || '$0.00'}</b>
+		Total:{' '}
+		<b>
+			&#36;
+			{total.toFixed(2)}
+		</b>
 	</p>
 )
 

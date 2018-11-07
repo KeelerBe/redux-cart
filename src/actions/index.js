@@ -7,14 +7,10 @@ const receiveProducts = (products) => ({
 	products
 })
 
-const receiveUsers = (users) => ({
+const receiveUsers = (users, currentUserId) => ({
 	type: types.RECEIVE_USERS,
-	users
-})
-
-const receiveCurrentUserId = (id) => ({
-	type: types.RECEIVE_CURRENT_USER_ID,
-	id
+	users,
+	currentUserId
 })
 
 export const getInitData = () => (dispatch) => {
@@ -22,6 +18,5 @@ export const getInitData = () => (dispatch) => {
 	const users = _users
 	const currentUserId = 'bbeec34e-d71a-4128-8502-5bfef4776b9f'
 	dispatch(receiveProducts(products))
-	dispatch(receiveUsers(users))
-	dispatch(receiveCurrentUserId(currentUserId))
+	dispatch(receiveUsers(users, currentUserId))
 }

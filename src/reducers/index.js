@@ -1,7 +1,7 @@
 import { combineReducers } from 'redux'
 import users, * as fromUsers from './users'
 import products, * as fromProducts from './products'
-import cart from './cart'
+import cart, * as fromCart from './cart'
 import inventory from './inventory'
 
 export default combineReducers({
@@ -12,10 +12,13 @@ export default combineReducers({
 })
 
 const getUser = (state, userId) => fromUsers.getUser(state.users, userId)
+const getProduct = (state, productId) =>
+	fromProducts.getProduct(state.products, productId)
 // const getCurrentUser = (state) => fromUsers.getCurrentUser(state.users)
 const getVendorName = (state, userId) => getUser(state, userId).vendorName
 const getVisibleProducts = (state) =>
 	fromProducts.getVisibleProducts(state.products)
+const getCartProductIds = (state) => fromCart.getCartProductIds(state.cart)
 
 export const getStoreProducts = (state) =>
 	getVisibleProducts(state).map((p) => {
@@ -25,3 +28,6 @@ export const getStoreProducts = (state) =>
 			vendorName: getVendorName(state, userId)
 		}
 	})
+
+export const getCartProducts = (state) =>
+	getCartProductIds(state).map((productId) => getProduct(state, productId))

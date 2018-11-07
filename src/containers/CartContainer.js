@@ -1,5 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import { connect } from 'react-redux'
+import { getCartProducts } from '../reducers'
 import { renderCartSummary } from '../components/Sections'
 import { renderTotal } from '../components/Subheadings'
 import ProductsList from '../components/ProductsList'
@@ -41,4 +43,10 @@ CartContainer.propTypes = {
 	).isRequired
 }
 
-export default CartContainer
+const mapStateToProps = (state) => ({
+	products: getCartProducts(state),
+	numOfItems: 0,
+	total: 0
+})
+
+export default connect(mapStateToProps)(CartContainer)

@@ -32,7 +32,10 @@
 		"buyer": true,
 		"buyerOrderIds": [],
 		"cartProductIds": [],
-		"vendor": false
+		"vendor": false,
+		"vendorName": null,
+		"vendorOrderIds": null,
+		"inventoryProductIds": null
 	},
 	"3a0fb22e-cbdb-41c4-a10c-aa7d93ba6435": {
 		"userId": "3a0fb22e-cbdb-41c4-a10c-aa7d93ba6435",

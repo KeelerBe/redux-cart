@@ -2,14 +2,26 @@ import _products from '../api/products.json'
 import _users from '../api/users.json'
 import * as types from '../constants/actionTypes'
 
-const receiveProducts = (products, users) => ({
+const receiveProducts = (products) => ({
 	type: types.RECEIVE_PRODUCTS,
-	products,
+	products
+})
+
+const receiveUsers = (users) => ({
+	type: types.RECEIVE_USERS,
 	users
 })
 
-export const getAllProducts = () => (dispatch) => {
+const receiveCurrentUserId = (id) => ({
+	type: types.RECEIVE_CURRENT_USER_ID,
+	id
+})
+
+export const getInitData = () => (dispatch) => {
 	const products = _products // data fetching here
 	const users = _users
-	dispatch(receiveProducts(products, users))
+	const currentUserId = 'bbeec34e-d71a-4128-8502-5bfef4776b9f'
+	dispatch(receiveProducts(products))
+	dispatch(receiveUsers(users))
+	dispatch(receiveCurrentUserId(currentUserId))
 }

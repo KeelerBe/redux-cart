@@ -1,18 +1,27 @@
-import produce from 'immer'
-import { RECEIVE_PRODUCTS } from '../constants/actionTypes'
 import { combineReducers } from 'redux'
+import produce from 'immer'
+import {
+	RECEIVE_USERS,
+	RECEIVE_CURRENT_USER_ID
+} from '../constants/actionTypes'
 
 const INITIAL_STATE = {
-	currentUserId: 'bbeec34e-d71a-4128-8502-5bfef4776b9f',
+	currentUserId: '',
 	byId: {}
 }
 
-const currentUserId = produce((draft, action) => {},
-INITIAL_STATE.currentUserId)
+const currentUserId = produce((draft, action) => {
+	switch (action.type) {
+		case RECEIVE_CURRENT_USER_ID:
+			return (draft = action.id)
+		default:
+			break
+	}
+}, INITIAL_STATE.currentUserId)
 
 const byId = produce((draft, action) => {
 	switch (action.type) {
-		case RECEIVE_PRODUCTS:
+		case RECEIVE_USERS:
 			return (draft = action.users)
 		default:
 			break
@@ -25,5 +34,6 @@ export default combineReducers({
 })
 
 const getCurrentUserId = (state) => state.currentUserId
+export const getUser = (state, userId) => state.byId[userId]
 export const getCurrentUser = (state) => state.byId[getCurrentUserId(state)]
 export const getCurrentUserName = (state) => getCurrentUser(state).firstName

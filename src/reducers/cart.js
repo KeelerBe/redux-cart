@@ -1,3 +1,4 @@
+import { combineReducers } from 'redux'
 import produce from 'immer'
 
 const INITIAL_STATE = {
@@ -5,6 +6,21 @@ const INITIAL_STATE = {
 	quantityById: {}
 }
 
-const cart = produce((draft, action) => {}, INITIAL_STATE)
+const allIds = produce((draft, action) => {
+	switch (action.type) {
+		default:
+			break
+	}
+}, INITIAL_STATE.allIds)
 
-export default cart
+const quantityById = produce((draft, action) => {
+	switch (action.type) {
+		default:
+			break
+	}
+}, INITIAL_STATE.quantityById)
+
+export default combineReducers({
+	allIds,
+	quantityById
+})

@@ -11,8 +11,9 @@ export default combineReducers({
 	inventory
 })
 
-const getCurrentUser = (state) => fromUsers.getCurrentUser(state.users)
-const getVendorName = (state) => getCurrentUser(state).vendorName
+const getUser = (state, userId) => fromUsers.getUser(state.users, userId)
+// const getCurrentUser = (state) => fromUsers.getCurrentUser(state.users)
+const getVendorName = (state, userId) => getUser(state, userId).vendorName
 const getVisibleProducts = (state) =>
 	fromProducts.getVisibleProducts(state.products)
 
@@ -21,6 +22,6 @@ export const getStoreProducts = (state) =>
 		const { userId, ...product } = p
 		return {
 			...product,
-			vendorName: getVendorName(state)
+			vendorName: getVendorName(state, userId)
 		}
 	})

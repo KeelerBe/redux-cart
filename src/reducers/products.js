@@ -1,6 +1,6 @@
+import { combineReducers } from 'redux'
 import produce from 'immer'
 import { RECEIVE_PRODUCTS } from '../constants/actionTypes'
-import { combineReducers } from 'redux'
 
 const INITIAL_STATE = {
 	byId: {},
@@ -31,6 +31,6 @@ export default combineReducers({
 	visibleIds
 })
 
-export const getProduct = (state, id) => state.byId[id]
+export const getProduct = (state, productId) => state.byId[productId]
 export const getVisibleProducts = (state) =>
-	state.visibleIds.map((id) => getProduct(state, id))
+	state.visibleIds.map((productId) => getProduct(state, productId))

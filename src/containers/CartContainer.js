@@ -3,13 +3,14 @@ import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import { getCartProducts, getTotal } from '../reducers'
 import { getNumOfItems } from '../reducers/cart'
+import { removeFromCart } from '../actions'
 import { renderCartSummary } from '../components/sections'
 import { renderTotal } from '../components/subheadings'
 import ProductsList from '../components/ProductsList'
 import ProductItem from '../components/ProductItem'
 import Product from '../components/Product'
 
-const CartContainer = ({ numOfItems, total, products, onClick }) => (
+const CartContainer = ({ numOfItems, total, products, removeFromCart }) => (
 	<ProductsList
 		title="Cart"
 		section={renderCartSummary(numOfItems)}
@@ -25,7 +26,9 @@ const CartContainer = ({ numOfItems, total, products, onClick }) => (
 						quantity={product.quantity}
 					/>
 				}
-				actions={[{ label: 'Remove', onClick: onClick }]}
+				actions={[
+					{ label: 'Remove', onClick: () => removeFromCart(product.productId) }
+				]}
 			/>
 		))}
 	</ProductsList>
@@ -50,4 +53,7 @@ const mapStateToProps = (state) => ({
 	total: getTotal(state)
 })
 
-export default connect(mapStateToProps)(CartContainer)
+export default connect(
+	mapStateToProps,
+	{ removeFromCart }
+)(CartContainer)

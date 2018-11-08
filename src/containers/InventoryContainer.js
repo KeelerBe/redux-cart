@@ -17,8 +17,8 @@ const InventoryContainer = ({
 }) => (
 	<ProductsList
 		title="Inventory"
-		subheading={renderCompanyName(vendorName)}
 		section={renderAddNewProductButton()}
+		subheading={renderCompanyName(vendorName)}
 	>
 		{products.map((product) => (
 			<ProductItem

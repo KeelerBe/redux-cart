@@ -19,9 +19,11 @@ const Product = ({ productName, price, available, quantity, vendorName }) => (
 			</li>
 		) : null}
 		{quantity ? (
-			<li>
+			<li id="quantity">
 				<b>Quantity: </b>
-				{quantity}
+				<button>-</button>
+				<input type="text" value={quantity} />
+				<button>+</button>
 			</li>
 		) : null}
 		{vendorName ? (

@@ -112,3 +112,20 @@ input[type='number'] {
 	background-color: rgba(33, 33, 33, 0.85);
 	z-index: 1000;
 }
+
+#quantity > input {
+	border: none;
+	width: 20px;
+	text-align: center;
+	background-color: #f2f2f2;
+}
+
+#quantity > button {
+	width: 13px;
+	height: 15px;
+	margin: 0 auto;
+	padding: 0;
+	display: table-cell;
+	vertical-align: middle;
+	font-weight: 600;
+}

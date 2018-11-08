@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux'
 import produce from 'immer'
-import { RECEIVE_USERS } from '../constants/actionTypes'
+import { RECEIVE_USERS, ADD_TO_CART } from '../constants/actionTypes'
 
 const INITIAL_STATE = {
 	allIds: [],
@@ -11,6 +11,9 @@ const allIds = produce((draft, action) => {
 	switch (action.type) {
 		case RECEIVE_USERS:
 			return (draft = action.users[action.currentUserId].cartProductIds)
+		case ADD_TO_CART:
+			draft.push(action.productId)
+			break
 		default:
 			break
 	}
@@ -21,6 +24,9 @@ const quantityById = produce((draft, action) => {
 		case RECEIVE_USERS:
 			return (draft =
 				action.users[action.currentUserId].cartProductQuantityById)
+		case ADD_TO_CART:
+			draft[action.productId] = 1
+			break
 		default:
 			break
 	}

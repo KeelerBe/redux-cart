@@ -20,3 +20,12 @@ export const getInitData = () => (dispatch) => {
 	dispatch(receiveProducts(products))
 	dispatch(receiveUsers(users, currentUserId))
 }
+
+export const addToCart = (productId) => ({
+	type: types.ADD_TO_CART,
+	productId
+})
+
+// export const startAddToCart = (productId) => (dispatch) => {
+// 	dispatch(addToCart(productId))
+// }

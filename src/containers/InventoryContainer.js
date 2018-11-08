@@ -53,9 +53,6 @@ InventoryContainer.propTypes = {
 const mapStateToProps = (state) => ({
 	products: getInventoryProducts(state),
 	vendorName: getVendorName(state.users)
-	// products: [],
-	// vendorName: 'Bo',
-	// something: getInventoryProducts(state)
 })
 
 export default connect(mapStateToProps)(InventoryContainer)

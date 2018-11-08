@@ -31,12 +31,8 @@ export default combineReducers({
 })
 
 const getCurrentUserId = (state) => state.currentUserId
-export const getUser = (state, userId) => state.byId[userId]
 const getCurrentUser = (state) => state.byId[getCurrentUserId(state)]
-// export const getCurrentUserName = (state) =>
-// 	getUser(state, getCurrentUserId(state)).firstName
-// export const getVendorName = (state) =>
-// 	getUser(state, getCurrentUserId(state)).vendorName
 
+export const getUser = (state, userId) => state.byId[userId]
 export const getCurrentUserName = (state) => getCurrentUser(state).firstName
 export const getVendorName = (state) => getCurrentUser(state).vendorName

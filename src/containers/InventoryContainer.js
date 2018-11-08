@@ -1,5 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import { connect } from 'react-redux'
+import { getInventoryProducts } from '../reducers'
+import { getVendorName } from '../reducers/users'
 import { renderAddNewProductButton } from '../components/Sections'
 import { renderCompanyName } from '../components/Subheadings'
 import ProductsList from '../components/ProductsList'
@@ -47,4 +50,12 @@ InventoryContainer.propTypes = {
 	).isRequired
 }
 
-export default InventoryContainer
+const mapStateToProps = (state) => ({
+	products: getInventoryProducts(state),
+	vendorName: getVendorName(state.users)
+	// products: [],
+	// vendorName: 'Bo',
+	// something: getInventoryProducts(state)
+})
+
+export default connect(mapStateToProps)(InventoryContainer)

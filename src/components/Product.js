@@ -1,5 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import QuantityField from './QuantityField'
 
 const Product = ({ productName, price, available, quantity, vendorName }) => (
 	<div>
@@ -19,11 +20,9 @@ const Product = ({ productName, price, available, quantity, vendorName }) => (
 			</li>
 		) : null}
 		{quantity ? (
-			<li id="quantity">
+			<li>
 				<b>Quantity: </b>
-				<button>-</button>
-				<input type="text" value={quantity} />
-				<button>+</button>
+				<QuantityField />
 			</li>
 		) : null}
 		{vendorName ? (

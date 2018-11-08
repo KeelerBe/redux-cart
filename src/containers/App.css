@@ -113,11 +113,15 @@ input[type='number'] {
 	z-index: 1000;
 }
 
-#quantity > input {
-	border: none;
-	width: 20px;
+#quantity {
+	display: inline;
+}
+
+#quantity > p {
+	display: inline;
 	text-align: center;
 	background-color: #f2f2f2;
+	font-size: 0.9em;
 }
 
 #quantity > button {

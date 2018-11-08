@@ -1,5 +1,5 @@
 import React from 'react'
-import AddNewProductButton from './AddNewProductButton'
+import AddNewProductButton from '../AddNewProductButton'
 
 export const renderGreeting = (userName) => (
 	<section>

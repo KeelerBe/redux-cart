@@ -5,10 +5,12 @@ class QuantityField extends Component {
 		quantity: 1
 	}
 
-	decrementQuantity = () =>
+	decrementQuantity = () => {
+		if (this.state.quantity <= 1) return
 		this.setState((prevState) => ({
 			quantity: prevState.quantity - 1
 		}))
+	}
 
 	incrementQuantity = () =>
 		this.setState((prevState) => ({

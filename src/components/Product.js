@@ -22,7 +22,7 @@ const Product = ({ productName, price, available, quantity, vendorName }) => (
 		{quantity ? (
 			<li>
 				<b>Quantity: </b>
-				<QuantityField />
+				<QuantityField quantity={quantity} />
 			</li>
 		) : null}
 		{vendorName ? (

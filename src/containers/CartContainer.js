@@ -21,7 +21,7 @@ const CartContainer = ({ numOfItems, total, products, onClick }) => (
 					<Product
 						productName={product.productName}
 						price={product.price}
-						quantity={product.quantity || 1}
+						quantity={product.quantity}
 					/>
 				}
 				actions={[{ label: 'Remove', onClick: onClick }]}
@@ -37,8 +37,8 @@ CartContainer.propTypes = {
 		PropTypes.shape({
 			productId: PropTypes.string.isRequired,
 			productName: PropTypes.string.isRequired,
-			price: PropTypes.number.isRequired
-			// quantity: PropTypes.number.isRequired
+			price: PropTypes.number.isRequired,
+			quantity: PropTypes.number.isRequired
 		})
 	).isRequired
 }

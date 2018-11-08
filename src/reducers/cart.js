@@ -18,6 +18,9 @@ const allIds = produce((draft, action) => {
 
 const quantityById = produce((draft, action) => {
 	switch (action.type) {
+		case RECEIVE_USERS:
+			return (draft =
+				action.users[action.currentUserId].cartProductQuantityById)
 		default:
 			break
 	}
@@ -29,3 +32,5 @@ export default combineReducers({
 })
 
 export const getCartProductIds = (state) => state.allIds
+export const getQuantityById = (state, productId) =>
+	state.quantityById[productId]

@@ -2,7 +2,12 @@ import React, { Component } from 'react'
 
 class QuantityField extends Component {
 	state = {
-		quantity: 1
+		quantity: this.props.quantity
+	}
+
+	componentDidUpdate(prevProps) {
+		if (prevProps.quantity !== this.props.quantity)
+			this.setState({ quantity: this.props.quantity })
 	}
 
 	decrementQuantity = () => {

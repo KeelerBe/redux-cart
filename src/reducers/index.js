@@ -17,6 +17,8 @@ const getProduct = (state, productId) =>
 const getVisibleProducts = (state) =>
 	fromProducts.getVisibleProducts(state.products)
 const getCartProductIds = (state) => fromCart.getCartProductIds(state.cart)
+const getQuantityById = (state, productId) =>
+	fromCart.getQuantityById(state.cart, productId)
 const getInventoryProductIds = (state) =>
 	fromInventory.getInventoryProductIds(state.inventory)
 
@@ -33,7 +35,13 @@ export const getStoreProducts = (state) =>
 	})
 
 export const getCartProducts = (state) =>
-	getCartProductIds(state).map((productId) => getProduct(state, productId))
+	getCartProductIds(state).map((productId) => {
+		const product = getProduct(state, productId)
+		return {
+			...product,
+			quantity: getQuantityById(state, productId)
+		}
+	})
 
 export const getInventoryProducts = (state) =>
 	getInventoryProductIds(state).map((productId) => getProduct(state, productId))

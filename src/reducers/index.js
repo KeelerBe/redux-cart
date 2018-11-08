@@ -21,7 +21,6 @@ const getQuantityById = (state, productId) =>
 	fromCart.getQuantityById(state.cart, productId)
 const getInventoryProductIds = (state) =>
 	fromInventory.getInventoryProductIds(state.inventory)
-
 const getVendorNameFromProduct = (state, userId) =>
 	getUser(state, userId).vendorName
 
@@ -42,6 +41,12 @@ export const getCartProducts = (state) =>
 			quantity: getQuantityById(state, productId)
 		}
 	})
+
+export const getTotal = (state) =>
+	getCartProductIds(state).reduce((total, productId) => {
+		const { price } = getProduct(state, productId)
+		return total + (price / 100) * getQuantityById(state, productId)
+	}, 0)
 
 export const getInventoryProducts = (state) =>
 	getInventoryProductIds(state).map((productId) => getProduct(state, productId))

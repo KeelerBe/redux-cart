@@ -34,3 +34,9 @@ export default combineReducers({
 export const getCartProductIds = (state) => state.allIds
 export const getQuantityById = (state, productId) =>
 	state.quantityById[productId]
+
+export const getNumOfItems = (state) =>
+	getCartProductIds(state).reduce(
+		(total, productId) => total + getQuantityById(state, productId),
+		0
+	)

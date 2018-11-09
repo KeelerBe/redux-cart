@@ -7,20 +7,23 @@ const INITIAL_STATE = {
 	visibleIds: []
 }
 
-// const product = produce((draft, action) => {
-// 	switch (action.type) {
-// 		case ADD_TO_CART:
-// 			return draft.available - 1
-// 		default:
-// 			break
-// 	}
-// })
+const product = produce((draft, action) => {
+	switch (action.type) {
+		case ADD_TO_CART:
+			draft.available -= 1
+			return
+		default:
+			break
+	}
+})
 
 const byId = produce((draft, action) => {
 	switch (action.type) {
 		case RECEIVE_PRODUCTS:
 			return action.products
 		default:
+			const { productId } = action
+			if (productId) draft[productId] = product(draft[productId], action)
 			return draft
 	}
 }, INITIAL_STATE.byId)

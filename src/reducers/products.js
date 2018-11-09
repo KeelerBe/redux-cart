@@ -1,6 +1,10 @@
 import { combineReducers } from 'redux'
 import produce from 'immer'
-import { RECEIVE_PRODUCTS, ADD_TO_CART } from '../constants/actionTypes'
+import {
+	RECEIVE_PRODUCTS,
+	ADD_TO_CART,
+	REMOVE_FROM_CART
+} from '../constants/actionTypes'
 
 const INITIAL_STATE = {
 	byId: {},
@@ -11,6 +15,9 @@ const product = produce((draft, action) => {
 	switch (action.type) {
 		case ADD_TO_CART:
 			draft.available -= 1
+			return
+		case REMOVE_FROM_CART:
+			draft.available += 1
 			return
 		default:
 			break

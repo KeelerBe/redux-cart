@@ -8,9 +8,9 @@ const INITIAL_STATE = {
 export default produce((draft, action) => {
 	switch (action.type) {
 		case RECEIVE_USERS:
-			return (draft = action.users[action.currentUserId].inventoryProductIds)
+			return action.users[action.currentUserId].inventoryProductIds
 		default:
-			break
+			return draft
 	}
 }, INITIAL_STATE)
 

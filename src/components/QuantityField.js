@@ -10,7 +10,11 @@ const QuantityField = ({ available, quantity, onIncrement, onDecrement }) => (
 			-
 		</button>
 		<p> {quantity} </p>
-		<button type="button" onClick={onIncrement} disabled={!available}>
+		<button
+			type="button"
+			onClick={onIncrement}
+			disabled={available < 1 ? 'disabled' : ''}
+		>
 			+
 		</button>
 	</div>

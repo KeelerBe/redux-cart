@@ -19,7 +19,7 @@ const QuantityContainer = ({
 )
 
 const mapStateToProps = (state, ownProps) => ({
-	available: getAvailable(state.products, ownProps.productId) >= 1
+	available: getAvailable(state.products, ownProps.productId)
 })
 
 const mapDispatchToProps = (dispatch, ownProps) => ({

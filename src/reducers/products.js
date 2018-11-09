@@ -63,3 +63,5 @@ export default combineReducers({
 export const getProduct = (state, productId) => state.byId[productId]
 export const getVisibleProducts = (state) =>
 	state.visibleIds.map((productId) => getProduct(state, productId))
+export const getAvailable = (state, productId) =>
+	getProduct(state, productId).available

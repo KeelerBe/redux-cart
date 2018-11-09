@@ -1,6 +1,6 @@
 import React from 'react'
 
-const QuantityField = ({ quantity, onIncrement, onDecrement }) => (
+const QuantityField = ({ available, quantity, onIncrement, onDecrement }) => (
 	<div id="quantity">
 		<button
 			type="button"
@@ -10,7 +10,7 @@ const QuantityField = ({ quantity, onIncrement, onDecrement }) => (
 			-
 		</button>
 		<p> {quantity} </p>
-		<button type="button" onClick={onIncrement}>
+		<button type="button" onClick={onIncrement} disabled={!available}>
 			+
 		</button>
 	</div>

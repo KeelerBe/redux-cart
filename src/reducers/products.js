@@ -23,7 +23,9 @@ const byId = produce((draft, action) => {
 			return action.products
 		default:
 			const { productId } = action
-			if (productId) draft[productId] = product(draft[productId], action)
+			if (productId) {
+				draft[productId] = product(draft[productId], action)
+			}
 			return draft
 	}
 }, INITIAL_STATE.byId)
@@ -31,7 +33,7 @@ const byId = produce((draft, action) => {
 const visibleIds = produce((draft, action) => {
 	switch (action.type) {
 		case RECEIVE_PRODUCTS:
-			Object.keys(action.products).map((id) => draft.push(id))
+			Object.keys(action.products).forEach((id) => draft.push(id))
 			return
 		default:
 			return draft

@@ -3,7 +3,7 @@
 		"productId": "edf249c9-8e0a-4c16-969d-b1462a405841",
 		"productName": "Practical Steel Chair",
 		"price": 20950,
-		"available": 18,
+		"available": 1,
 		"status": "active",
 		"userId": "efdc1e4e-45ed-41e3-8581-323cdc721c67"
 	},
@@ -11,7 +11,7 @@
 		"productId": "9270f2b0-0441-4c84-8ec5-abda976936c9",
 		"productName": "Gorgeous Rubber Table",
 		"price": 77400,
-		"available": 8,
+		"available": 0,
 		"status": "active",
 		"userId": "efdc1e4e-45ed-41e3-8581-323cdc721c67"
 	},

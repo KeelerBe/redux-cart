@@ -24,8 +24,9 @@ const ProductsContainer = ({ userName, products, addToCart }) => (
 					}
 					actions={[
 						{
-							label: 'Add to Cart',
-							onClick: () => addToCart(product.productId)
+							label: product.available < 1 ? 'Sold out' : 'Add to Cart',
+							onClick: () => addToCart(product.productId),
+							disabled: !!product.available < 1
 						}
 					]}
 				/>

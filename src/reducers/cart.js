@@ -19,8 +19,7 @@ const allIds = produce((draft, action) => {
 			draft.push(action.productId)
 			return
 		case REMOVE_FROM_CART:
-			draft.filter((id) => id !== action.productId)
-			return
+			return draft.filter((id) => id !== action.productId)
 		default:
 			return draft
 	}

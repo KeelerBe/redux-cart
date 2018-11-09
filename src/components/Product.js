@@ -1,8 +1,15 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import QuantityField from './QuantityField'
+import QuantityContainer from '../containers/QuantityContainer'
 
-const Product = ({ productName, price, available, quantity, vendorName }) => (
+const Product = ({
+	productId,
+	productName,
+	price,
+	available,
+	quantity,
+	vendorName
+}) => (
 	<div>
 		<li>
 			<b>Product Name: </b>
@@ -22,7 +29,7 @@ const Product = ({ productName, price, available, quantity, vendorName }) => (
 		{quantity ? (
 			<li>
 				<b>Quantity: </b>
-				<QuantityField quantity={quantity} />
+				<QuantityContainer quantity={quantity} productId={productId} />
 			</li>
 		) : null}
 		{vendorName ? (

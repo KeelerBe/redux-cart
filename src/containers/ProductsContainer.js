@@ -3,13 +3,19 @@ import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import { getStoreProducts } from '../reducers'
 import { getCurrentUserName } from '../reducers/users'
+import { getCartProductIds } from '../reducers/cart'
 import { addToCart } from '../actions'
 import { renderGreeting } from '../components/sections'
 import ProductsList from '../components/ProductsList'
 import ProductItem from '../components/ProductItem'
 import Product from '../components/Product'
 
-const ProductsContainer = ({ userName, products, addToCart }) => (
+const ProductsContainer = ({
+	userName,
+	products,
+	cartProductIds,
+	addToCart
+}) => (
 	<div>
 		<ProductsList title="Products" section={renderGreeting(userName)}>
 			{products.map((product) => (
@@ -26,7 +32,9 @@ const ProductsContainer = ({ userName, products, addToCart }) => (
 						{
 							label: product.available < 1 ? 'Sold out' : 'Add to Cart',
 							onClick: () => addToCart(product.productId),
-							disabled: !!product.available < 1
+							disabled:
+								product.available < 1 ||
+								cartProductIds.includes(product.productId)
 						}
 					]}
 				/>
@@ -49,7 +57,8 @@ ProductsContainer.propTypes = {
 
 const mapStateToProps = (state) => ({
 	products: getStoreProducts(state),
-	userName: getCurrentUserName(state.users)
+	userName: getCurrentUserName(state.users),
+	cartProductIds: getCartProductIds(state.cart)
 })
 
 export default connect(

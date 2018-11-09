@@ -30,3 +30,13 @@ export const removeFromCart = (productId) => ({
 	type: types.REMOVE_FROM_CART,
 	productId
 })
+
+export const incrementQuantity = (productId) => ({
+	type: types.INCREMENT_QUANTITY,
+	productId
+})
+
+export const decrementQuantity = (productId) => ({
+	type: types.DECREMENT_QUANTITY,
+	productId
+})

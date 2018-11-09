@@ -21,6 +21,7 @@ const CartContainer = ({ numOfItems, total, products, removeFromCart }) => (
 				key={product.productId}
 				product={
 					<Product
+						productId={product.productId}
 						productName={product.productName}
 						price={product.price}
 						quantity={product.quantity}

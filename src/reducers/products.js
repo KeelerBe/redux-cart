@@ -3,7 +3,9 @@ import produce from 'immer'
 import {
 	RECEIVE_PRODUCTS,
 	ADD_TO_CART,
-	REMOVE_FROM_CART
+	REMOVE_FROM_CART,
+	INCREMENT_QUANTITY,
+	DECREMENT_QUANTITY
 } from '../constants/actionTypes'
 
 const INITIAL_STATE = {
@@ -17,6 +19,12 @@ const product = produce((draft, action) => {
 			draft.available -= 1
 			return
 		case REMOVE_FROM_CART:
+			draft.available += 1
+			return
+		case INCREMENT_QUANTITY:
+			draft.available -= 1
+			return
+		case DECREMENT_QUANTITY:
 			draft.available += 1
 			return
 		default:

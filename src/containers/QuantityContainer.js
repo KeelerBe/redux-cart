@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { incrementQuantity, decrementQuantity } from '../actions'
+import { requestIncrement, decrementQuantity } from '../actions'
 import QuantityField from '../components/QuantityField'
 
 const QuantityContainer = ({
@@ -16,7 +16,7 @@ const QuantityContainer = ({
 )
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
-	incrementQuantity: () => dispatch(incrementQuantity(ownProps.productId)),
+	incrementQuantity: () => dispatch(requestIncrement(ownProps.productId)),
 	decrementQuantity: () => dispatch(decrementQuantity(ownProps.productId))
 })
 

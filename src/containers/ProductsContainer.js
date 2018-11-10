@@ -5,7 +5,7 @@ import { getStoreProducts } from '../reducers'
 import { getCurrentUserName } from '../reducers/users'
 import { getCartProductIds } from '../reducers/cart'
 import { addToCart } from '../actions'
-import { renderGreeting } from '../components/sections'
+import Greeting from '../components/sections/ProductsSection'
 import ProductsList from '../components/ProductsList'
 import ProductItem from '../components/ProductItem'
 import Product from '../components/Product'
@@ -17,7 +17,7 @@ const ProductsContainer = ({
 	addToCart
 }) => (
 	<div>
-		<ProductsList title="Products" section={renderGreeting(userName)}>
+		<ProductsList title="Products" section={<Greeting userName={userName} />}>
 			{products.map((product) => (
 				<ProductItem
 					key={product.productId}

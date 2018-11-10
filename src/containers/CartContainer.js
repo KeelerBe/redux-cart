@@ -4,8 +4,8 @@ import { connect } from 'react-redux'
 import { getCartProducts, getTotal } from '../reducers'
 import { getNumOfItems } from '../reducers/cart'
 import { removeFromCart } from '../actions'
-import { renderCartSummary } from '../components/sections'
-import { renderTotal } from '../components/subheadings'
+import CartSummary from '../components/sections/CartSection'
+import Total from '../components/subheadings/CartSubheading'
 import ProductsList from '../components/ProductsList'
 import ProductItem from '../components/ProductItem'
 import Product from '../components/Product'
@@ -13,8 +13,8 @@ import Product from '../components/Product'
 const CartContainer = ({ numOfItems, total, products, removeFromCart }) => (
 	<ProductsList
 		title="Cart"
-		section={renderCartSummary(numOfItems)}
-		subheading={renderTotal(total)}
+		section={<CartSummary numOfItems={numOfItems} />}
+		subheading={<Total total={total} />}
 	>
 		{products.map((product) => (
 			<ProductItem

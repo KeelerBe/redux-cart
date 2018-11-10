@@ -2,7 +2,7 @@ import React, { Fragment } from 'react'
 import PropTypes from 'prop-types'
 import { Formik, Form, Field } from 'formik'
 
-const ProductForm = ({ closeForm, onSubmit }) => (
+const ProductForm = ({ closeModal, onSubmit }) => (
 	<Fragment>
 		<div id="modal-overlay" />
 		<div id="product-form">
@@ -15,7 +15,7 @@ const ProductForm = ({ closeForm, onSubmit }) => (
 				onSubmit={(values, { resetForm }) => {
 					onSubmit(values)
 					resetForm({})
-					closeForm()
+					closeModal()
 				}}
 			>
 				{() => (
@@ -34,7 +34,7 @@ const ProductForm = ({ closeForm, onSubmit }) => (
 								<Field id="available" name="available" type="number" />
 							</div>
 							<div>
-								<button type="button" onClick={closeForm}>
+								<button type="button" onClick={closeModal}>
 									Cancel
 								</button>
 								<button type="submit">Add</button>

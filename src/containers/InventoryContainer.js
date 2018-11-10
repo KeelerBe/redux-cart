@@ -3,8 +3,8 @@ import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import { getInventoryProducts } from '../reducers'
 import { getVendorName } from '../reducers/users'
-import { renderAddNewProductButton } from '../components/sections'
-import { renderCompanyName } from '../components/subheadings'
+import ModalHandler from '../components/sections/InventorySection'
+import CompanyName from '../components/subheadings/InventorySubheading'
 import ProductsList from '../components/ProductsList'
 import ProductItem from '../components/ProductItem'
 import Product from '../components/Product'
@@ -17,8 +17,8 @@ const InventoryContainer = ({
 }) => (
 	<ProductsList
 		title="Inventory"
-		section={renderAddNewProductButton()}
-		subheading={renderCompanyName(vendorName)}
+		section={<ModalHandler />}
+		subheading={<CompanyName vendorName={vendorName} />}
 	>
 		{products.map((product) => (
 			<ProductItem

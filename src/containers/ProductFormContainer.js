@@ -1,11 +1,10 @@
-import React from 'react'
+// import React from 'react'
 import { connect } from 'react-redux'
 import { startAddNewProduct } from '../actions'
-import ProductForm from '../components/ProductForm'
+// import ProductForm from '../components/ProductForm'
 
-const ProductFormContainer = ({ closeForm, startAddNewProduct }) => (
-	<ProductForm closeForm={closeForm} onSubmit={startAddNewProduct} />
-)
+const ProductFormContainer = ({ startAddNewProduct, children }) =>
+	children(startAddNewProduct)
 
 export default connect(
 	null,

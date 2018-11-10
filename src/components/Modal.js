@@ -1,11 +1,11 @@
-import React, { Component } from 'react'
+import { Component } from 'react'
 import ReactDOM from 'react-dom'
 import PropTypes from 'prop-types'
-import ProductFormContainer from '../containers/ProductFormContainer'
+// import ProductFormContainer from '../containers/ProductFormContainer'
 
 const modalRoot = document.getElementById('modal-root')
 
-class ProductFormModal extends Component {
+class Modal extends Component {
 	constructor(props) {
 		super(props)
 		this.container = document.createElement('div')
@@ -20,15 +20,12 @@ class ProductFormModal extends Component {
 	}
 
 	render() {
-		return ReactDOM.createPortal(
-			<ProductFormContainer closeForm={this.props.closeForm} />,
-			this.container
-		)
+		return ReactDOM.createPortal(this.props.children, this.container)
 	}
 }
 
-ProductFormModal.propTypes = {
+Modal.propTypes = {
 	closeForm: PropTypes.func.isRequired
 }
 
-export default ProductFormModal
+export default Modal

@@ -37,11 +37,6 @@ export const incrementQuantity = (productId) => ({
 	productId
 })
 
-// export const requestIncrement = (productId) => (dispatch, getState) => {
-// 	if (getState().products.byId[productId].available >= 1)
-// 		dispatch(incrementQuantity(productId))
-// }
-
 export const decrementQuantity = (productId) => ({
 	type: types.DECREMENT_QUANTITY,
 	productId

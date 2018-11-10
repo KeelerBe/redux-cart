@@ -2,17 +2,21 @@ import React, { Fragment } from 'react'
 import PropTypes from 'prop-types'
 import { Formik, Form, Field } from 'formik'
 
-const ProductForm = ({ onCancelClick }) => (
+const ProductForm = ({ closeForm, onSubmit }) => (
 	<Fragment>
 		<div id="modal-overlay" />
 		<div id="product-form">
 			<Formik
 				initialValues={{
 					productName: '',
-					price: '',
-					available: ''
+					price: undefined,
+					available: undefined
 				}}
-				onSubmit={(values) => console.log(JSON.stringify(values, null, 2))}
+				onSubmit={(values, { resetForm }) => {
+					onSubmit(values)
+					resetForm({})
+					closeForm()
+				}}
 			>
 				{() => (
 					<div>
@@ -30,7 +34,9 @@ const ProductForm = ({ onCancelClick }) => (
 								<Field id="available" name="available" type="number" />
 							</div>
 							<div>
-								<button onClick={onCancelClick}>Cancel</button>
+								<button type="button" onClick={closeForm}>
+									Cancel
+								</button>
 								<button type="submit">Add</button>
 							</div>
 						</Form>
@@ -42,7 +48,7 @@ const ProductForm = ({ onCancelClick }) => (
 )
 
 ProductForm.propTypes = {
-	onCancelClick: PropTypes.func.isRequired
+	closeForm: PropTypes.func.isRequired
 }
 
 export default ProductForm

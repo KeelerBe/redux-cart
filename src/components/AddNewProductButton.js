@@ -4,18 +4,17 @@ import ProductFormModal from './ProductFormModal'
 class AddNewProductButton extends React.Component {
 	state = { showModal: false }
 
-	toggleModal = () => {
-		this.setState({ showModal: !this.state.showModal })
-	}
+	openForm = () => this.setState({ showModal: true })
+	closeForm = () => this.setState({ showModal: false })
 
 	render() {
 		return (
 			<section id="modal">
-				<button onClick={this.toggleModal}>
+				<button onClick={this.openForm}>
 					<b>Add new product</b>
 				</button>
 				{this.state.showModal && (
-					<ProductFormModal onCancelClick={this.toggleModal} />
+					<ProductFormModal closeForm={this.closeForm} />
 				)}
 			</section>
 		)

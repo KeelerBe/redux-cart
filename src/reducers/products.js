@@ -5,7 +5,8 @@ import {
 	ADD_TO_CART,
 	REMOVE_FROM_CART,
 	INCREMENT_QUANTITY,
-	DECREMENT_QUANTITY
+	DECREMENT_QUANTITY,
+	ADD_NEW_PRODUCT
 } from '../constants/actionTypes'
 
 const INITIAL_STATE = {
@@ -36,6 +37,9 @@ const byId = produce((draft, action) => {
 	switch (action.type) {
 		case RECEIVE_PRODUCTS:
 			return action.products
+		case ADD_NEW_PRODUCT:
+			draft[action.product.productId] = action.product
+			return
 		default:
 			const { productId } = action
 			if (productId) {
@@ -49,6 +53,9 @@ const visibleIds = produce((draft, action) => {
 	switch (action.type) {
 		case RECEIVE_PRODUCTS:
 			Object.keys(action.products).forEach((id) => draft.push(id))
+			return
+		case ADD_NEW_PRODUCT:
+			draft.push(action.product.productId)
 			return
 		default:
 			return draft

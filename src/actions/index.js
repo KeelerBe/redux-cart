@@ -1,3 +1,4 @@
+import uuidv4 from 'uuid/v4'
 import _products from '../api/products.json'
 import _users from '../api/users.json'
 import * as types from '../constants/actionTypes'
@@ -45,3 +46,18 @@ export const decrementQuantity = (productId) => ({
 	type: types.DECREMENT_QUANTITY,
 	productId
 })
+
+const addNewProduct = (product) => ({
+	type: types.ADD_NEW_PRODUCT,
+	product
+})
+
+export const startAddNewProduct = (newProduct) => (dispatch, getState) => {
+	const userId = getState().users.currentUserId
+	const product = {
+		...newProduct,
+		productId: uuidv4(),
+		userId
+	}
+	dispatch(addNewProduct(product))
+}

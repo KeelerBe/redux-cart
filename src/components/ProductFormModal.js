@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import ReactDOM from 'react-dom'
 import PropTypes from 'prop-types'
-import ProductForm from './ProductForm'
+import ProductFormContainer from '../containers/ProductFormContainer'
 
 const modalRoot = document.getElementById('modal-root')
 
@@ -21,14 +21,14 @@ class ProductFormModal extends Component {
 
 	render() {
 		return ReactDOM.createPortal(
-			<ProductForm onCancelClick={this.props.onCancelClick} />,
+			<ProductFormContainer closeForm={this.props.closeForm} />,
 			this.container
 		)
 	}
 }
 
 ProductFormModal.propTypes = {
-	onCancelClick: PropTypes.func.isRequired
+	closeForm: PropTypes.func.isRequired
 }
 
 export default ProductFormModal

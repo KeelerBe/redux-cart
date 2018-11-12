@@ -20,7 +20,7 @@ const product = produce((draft, action) => {
 			draft.available -= 1
 			return
 		case REMOVE_FROM_CART:
-			draft.available += 1
+			draft.available += action.quantity
 			return
 		case INCREMENT_QUANTITY:
 			draft.available -= 1

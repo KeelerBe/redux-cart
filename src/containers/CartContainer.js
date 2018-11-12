@@ -28,7 +28,10 @@ const CartContainer = ({ numOfItems, total, products, removeFromCart }) => (
 					/>
 				}
 				actions={[
-					{ label: 'Remove', onClick: () => removeFromCart(product.productId) }
+					{
+						label: 'Remove',
+						onClick: () => removeFromCart(product.productId, product.quantity)
+					}
 				]}
 			/>
 		))}

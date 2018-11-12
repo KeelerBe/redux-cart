@@ -67,7 +67,6 @@ const visibleIds = produce((draft, action) => {
 			Object.keys(action.products).forEach((id) => draft.push(id))
 			return
 		case ADD_NEW_PRODUCT:
-			// draft.push(action.product.productId)
 			draft.splice(0, 0, action.product.productId)
 			return
 		case DELETE_PRODUCT:

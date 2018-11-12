@@ -3,23 +3,23 @@ import PropTypes from 'prop-types'
 import { Formik, Form, Field } from 'formik'
 
 const ProductForm = ({
-	productName,
-	price,
-	available,
+	product,
 	closeModal,
-	onSubmit
+	startAddNewProduct,
+	editProduct
 }) => (
 	<Fragment>
 		<div id="modal-overlay" />
 		<div id="product-form">
+			{/* {console.log(product)} */}
 			<Formik
 				initialValues={{
-					productName: productName || '',
-					price: price || undefined,
-					available: available || undefined
+					productName: product.productName || '',
+					price: product.price || undefined,
+					available: product.available || undefined
 				}}
 				onSubmit={(values, { resetForm }) => {
-					onSubmit(values)
+					product.productId ? startAddNewProduct(values) : editProduct(values)
 					resetForm({})
 					closeModal()
 				}}
@@ -54,8 +54,15 @@ const ProductForm = ({
 )
 
 ProductForm.propTypes = {
+	product: PropTypes.shape({
+		productId: PropTypes.string,
+		productName: PropTypes.string,
+		price: PropTypes.number,
+		available: PropTypes.number
+	}),
 	closeModal: PropTypes.func.isRequired,
-	onSubmit: PropTypes.func.isRequired
+	startAddNewProduct: PropTypes.func.isRequired,
+	editProduct: PropTypes.func.isRequired
 }
 
 export default ProductForm

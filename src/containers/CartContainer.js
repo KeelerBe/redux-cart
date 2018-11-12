@@ -19,7 +19,7 @@ const CartContainer = ({ numOfItems, total, products, removeFromCart }) => (
 		{products.map((product) => (
 			<ProductItem
 				key={product.productId}
-				product={
+				productComponent={
 					<Product
 						productId={product.productId}
 						productName={product.productName}

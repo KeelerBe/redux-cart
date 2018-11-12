@@ -2,13 +2,17 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import ModalHandler from '../components/ModalHandler'
 
-const ProductItem = ({ product, actions }) => (
+const ProductItem = ({ productComponent, actions }) => (
 	<div id="product-item">
-		{product}
+		{productComponent}
 		{actions.map(
 			(action) =>
 				action.label === 'Edit' ? (
-					<ModalHandler key={action.label} label={action.label} />
+					<ModalHandler
+						key={action.label}
+						label={action.label}
+						product={action.product}
+					/>
 				) : (
 					<button
 						key={action.label}
@@ -23,14 +27,20 @@ const ProductItem = ({ product, actions }) => (
 )
 
 ProductItem.propTypes = {
-	product: PropTypes.node.isRequired,
+	productComponent: PropTypes.node.isRequired,
 	actions: PropTypes.arrayOf(
-		PropTypes.shape({
-			label: PropTypes.string.isRequired,
-			onClick: PropTypes.func,
-			disabled: PropTypes.bool
-		}).isRequired
-	)
+		PropTypes.oneOfType([
+			PropTypes.shape({
+				label: PropTypes.string.isRequired,
+				onClick: PropTypes.func.isRequired,
+				disabled: PropTypes.bool
+			}),
+			PropTypes.shape({
+				label: PropTypes.string.isRequired,
+				product: PropTypes.object.isRequired
+			})
+		])
+	).isRequired
 }
 
 export default ProductItem

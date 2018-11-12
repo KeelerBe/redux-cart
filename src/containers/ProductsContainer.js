@@ -21,7 +21,7 @@ const ProductsContainer = ({
 			{products.map((product) => (
 				<ProductItem
 					key={product.productId}
-					product={
+					productComponent={
 						<Product
 							productName={product.productName}
 							price={product.price}

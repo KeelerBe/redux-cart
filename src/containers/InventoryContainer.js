@@ -20,7 +20,7 @@ const InventoryContainer = ({ vendorName, products }) => (
 		{products.map((product) => (
 			<ProductItem
 				key={product.productId}
-				product={
+				productComponent={
 					<Product
 						productName={product.productName}
 						price={product.price}
@@ -28,7 +28,7 @@ const InventoryContainer = ({ vendorName, products }) => (
 					/>
 				}
 				actions={[
-					{ label: 'Edit' },
+					{ label: 'Edit', product: product },
 					{ label: 'Delete', onClick: onDeleteClick }
 				]}
 			/>

@@ -22,10 +22,12 @@ class ModalHandler extends React.Component {
 				{this.state.showModal && (
 					<Modal>
 						<ProductFormContainer>
-							{(startAddNewProduct) => (
+							{({ startAddNewProduct, editProduct }) => (
 								<ProductForm
 									closeModal={this.closeModal}
-									onSubmit={startAddNewProduct}
+									startAddNewProduct={startAddNewProduct}
+									editProduct={() => editProduct(this.props.product)}
+									product={this.props.product}
 								/>
 							)}
 						</ProductFormContainer>
@@ -38,7 +40,13 @@ class ModalHandler extends React.Component {
 
 ModalHandler.propTypes = {
 	id: PropTypes.string,
-	label: PropTypes.string.isRequired
+	label: PropTypes.string.isRequired,
+	product: PropTypes.shape({
+		productId: PropTypes.string,
+		productName: PropTypes.string,
+		price: PropTypes.number,
+		available: PropTypes.number
+	})
 }
 
 export default ModalHandler

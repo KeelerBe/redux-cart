@@ -1,8 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-// import Product from './Product'
 
-const ProductItem = ({ product, actions, disabled }) => (
+const ProductItem = ({ product, actions }) => (
 	<div id="product-item">
 		{product}
 		{actions.map((action) => (
@@ -21,9 +20,9 @@ ProductItem.propTypes = {
 	product: PropTypes.node.isRequired,
 	actions: PropTypes.arrayOf(
 		PropTypes.shape({
-			label: PropTypes.string.isRequired
-			// onclick: PropTypes.func.isRequired,
-			// disabled: PropTypes.bool
+			label: PropTypes.string.isRequired,
+			onClick: PropTypes.func.isRequired,
+			disabled: PropTypes.bool
 		})
 	)
 }

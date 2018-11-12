@@ -14,7 +14,7 @@ ProductsList.propTypes = {
 	title: PropTypes.string.isRequired,
 	section: PropTypes.node.isRequired,
 	subheading: PropTypes.node,
-	children: PropTypes.node
+	children: PropTypes.node.isRequired
 }
 
 export default ProductsList

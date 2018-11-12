@@ -1,10 +1,14 @@
-// import React from 'react'
 import { connect } from 'react-redux'
+import PropTypes from 'prop-types'
 import { startAddNewProduct } from '../actions'
-// import ProductForm from '../components/ProductForm'
 
 const ProductFormContainer = ({ startAddNewProduct, children }) =>
 	children(startAddNewProduct)
+
+ProductFormContainer.propTypes = {
+	startAddNewProduct: PropTypes.func.isRequired,
+	children: PropTypes.node.isRequired
+}
 
 export default connect(
 	null,

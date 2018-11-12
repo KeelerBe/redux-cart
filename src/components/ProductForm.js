@@ -48,7 +48,8 @@ const ProductForm = ({ closeModal, onSubmit }) => (
 )
 
 ProductForm.propTypes = {
-	closeForm: PropTypes.func.isRequired
+	closeModal: PropTypes.func.isRequired,
+	onSubmit: PropTypes.func.isRequired
 }
 
 export default ProductForm

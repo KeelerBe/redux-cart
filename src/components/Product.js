@@ -42,8 +42,9 @@ const Product = ({
 )
 
 Product.propTypes = {
-	productName: PropTypes.string,
-	price: PropTypes.number,
+	productId: PropTypes.string,
+	productName: PropTypes.string.isRequired,
+	price: PropTypes.number.isRequired,
 	available: PropTypes.number,
 	quantity: PropTypes.number,
 	vendorName: PropTypes.string

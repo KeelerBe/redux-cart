@@ -1,7 +1,6 @@
 import { Component } from 'react'
 import ReactDOM from 'react-dom'
 import PropTypes from 'prop-types'
-// import ProductFormContainer from '../containers/ProductFormContainer'
 
 const modalRoot = document.getElementById('modal-root')
 
@@ -25,7 +24,7 @@ class Modal extends Component {
 }
 
 Modal.propTypes = {
-	closeForm: PropTypes.func.isRequired
+	children: PropTypes.node.isRequired
 }
 
 export default Modal

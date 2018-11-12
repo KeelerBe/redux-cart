@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
 const Greeting = ({ userName }) => (
 	<section>
@@ -8,5 +9,9 @@ const Greeting = ({ userName }) => (
 		<button>{userName ? 'Sign out' : 'Sign in'}</button>
 	</section>
 )
+
+Greeting.propTypes = {
+	userName: PropTypes.string.isRequired
+}
 
 export default Greeting

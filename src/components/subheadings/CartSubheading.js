@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
 const Total = ({ total }) => (
 	<p>
@@ -9,5 +10,9 @@ const Total = ({ total }) => (
 		</b>
 	</p>
 )
+
+Total.propTypes = {
+	total: PropTypes.number.isRequired
+}
 
 export default Total

@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
 const QuantityField = ({ available, quantity, onIncrement, onDecrement }) => (
 	<div id="quantity">
@@ -19,5 +20,12 @@ const QuantityField = ({ available, quantity, onIncrement, onDecrement }) => (
 		</button>
 	</div>
 )
+
+QuantityField.propTypes = {
+	available: PropTypes.number.isRequired,
+	quantity: PropTypes.number.isRequired,
+	onIncrement: PropTypes.func.isRequired,
+	onDecrement: PropTypes.func.isRequired
+}
 
 export default QuantityField

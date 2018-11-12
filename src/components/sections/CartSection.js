@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
 const CartSection = ({ numOfItems }) => (
 	<section>
@@ -8,5 +9,9 @@ const CartSection = ({ numOfItems }) => (
 		<button>Checkout</button>
 	</section>
 )
+
+CartSection.propTypes = {
+	numOfItems: PropTypes.number.isRequired
+}
 
 export default CartSection

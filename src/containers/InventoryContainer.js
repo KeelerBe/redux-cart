@@ -9,11 +9,14 @@ import ProductsList from '../components/ProductsList'
 import ProductItem from '../components/ProductItem'
 import Product from '../components/Product'
 
+const onEditClick = () => console.log('edit')
+const onDeleteClick = () => console.log('delete')
+
 const InventoryContainer = ({
 	vendorName,
-	products,
-	onEditClick,
-	onDeleteClick
+	products
+	// onEditClick,
+	// onDeleteClick
 }) => (
 	<ProductsList
 		title="Inventory"
@@ -44,10 +47,13 @@ InventoryContainer.propTypes = {
 	products: PropTypes.arrayOf(
 		PropTypes.shape({
 			productId: PropTypes.string.isRequired,
+			productName: PropTypes.string.isRequired,
 			price: PropTypes.number.isRequired,
 			available: PropTypes.number.isRequired
 		})
 	).isRequired
+	// onEditClick: PropTypes.func.isRequired,
+	// onDeleteClick: PropTypes.func.isRequired
 }
 
 const mapStateToProps = (state) => ({

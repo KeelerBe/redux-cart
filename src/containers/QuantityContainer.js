@@ -1,5 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
+import PropTypes from 'prop-types'
 import { getAvailable } from '../reducers/products'
 import { incrementQuantity, decrementQuantity } from '../actions'
 import QuantityField from '../components/QuantityField'
@@ -17,6 +18,13 @@ const QuantityContainer = ({
 		onDecrement={decrementQuantity}
 	/>
 )
+
+QuantityContainer.propTypes = {
+	available: PropTypes.number.isRequired,
+	incrementQuantity: PropTypes.func.isRequired,
+	decrementQuantity: PropTypes.func.isRequired,
+	quantity: PropTypes.number.isRequired
+}
 
 const mapStateToProps = (state, ownProps) => ({
 	available: getAvailable(state.products, ownProps.productId)

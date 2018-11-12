@@ -7,7 +7,8 @@ import {
 	INCREMENT_QUANTITY,
 	DECREMENT_QUANTITY,
 	ADD_NEW_PRODUCT,
-	EDIT_PRODUCT
+	EDIT_PRODUCT,
+	DELETE_PRODUCT
 } from '../constants/actionTypes'
 
 const INITIAL_STATE = {
@@ -48,6 +49,9 @@ const byId = produce((draft, action) => {
 		case ADD_NEW_PRODUCT:
 			draft[action.product.productId] = action.product
 			return
+		case DELETE_PRODUCT:
+			delete draft[action.productId]
+			return
 		default:
 			const { productId } = action
 			if (productId) {
@@ -66,6 +70,8 @@ const visibleIds = produce((draft, action) => {
 			// draft.push(action.product.productId)
 			draft.splice(0, 0, action.product.productId)
 			return
+		case DELETE_PRODUCT:
+			return draft.filter((id) => id !== action.productId)
 		default:
 			return draft
 	}

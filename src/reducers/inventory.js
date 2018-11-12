@@ -1,5 +1,9 @@
 import produce from 'immer'
-import { RECEIVE_USERS, ADD_NEW_PRODUCT } from '../constants/actionTypes'
+import {
+	RECEIVE_USERS,
+	ADD_NEW_PRODUCT,
+	DELETE_PRODUCT
+} from '../constants/actionTypes'
 
 const INITIAL_STATE = {
 	allIds: []
@@ -12,6 +16,8 @@ export default produce((draft, action) => {
 		case ADD_NEW_PRODUCT:
 			draft.push(action.product.productId)
 			return
+		case DELETE_PRODUCT:
+			return draft.filter((id) => id !== action.productId)
 		default:
 			return draft
 	}

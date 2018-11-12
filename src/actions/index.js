@@ -63,3 +63,8 @@ export const editProduct = (productId, product) => ({
 	productId,
 	product
 })
+
+export const deleteProduct = (productId) => ({
+	type: types.DELETE_PRODUCT,
+	productId
+})

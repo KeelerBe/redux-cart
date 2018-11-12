@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
+import { deleteProduct } from '../actions'
 import { getInventoryProducts } from '../reducers'
 import { getVendorName } from '../reducers/users'
 import ModalHandler from '../components/ModalHandler'
@@ -9,9 +10,7 @@ import ProductsList from '../components/ProductsList'
 import ProductItem from '../components/ProductItem'
 import Product from '../components/Product'
 
-const onDeleteClick = () => console.log('delete')
-
-const InventoryContainer = ({ vendorName, products }) => (
+const InventoryContainer = ({ vendorName, products, deleteProduct }) => (
 	<ProductsList
 		title="Inventory"
 		section={<ModalHandler id="add-new-product" label="Add new product" />}
@@ -29,7 +28,7 @@ const InventoryContainer = ({ vendorName, products }) => (
 				}
 				actions={[
 					{ label: 'Edit', product: product },
-					{ label: 'Delete', onClick: onDeleteClick }
+					{ label: 'Delete', onClick: () => deleteProduct(product.productId) }
 				]}
 			/>
 		))}
@@ -54,6 +53,6 @@ const mapStateToProps = (state) => ({
 })
 
 export default connect(
-	mapStateToProps
-	// { editProduct }
+	mapStateToProps,
+	{ deleteProduct }
 )(InventoryContainer)

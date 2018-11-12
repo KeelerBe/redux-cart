@@ -26,7 +26,7 @@ class ModalHandler extends React.Component {
 								<ProductForm
 									closeModal={this.closeModal}
 									startAddNewProduct={startAddNewProduct}
-									editProduct={() => editProduct(this.props.product)}
+									editProduct={editProduct}
 									product={this.props.product}
 								/>
 							)}

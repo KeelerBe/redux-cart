@@ -3,7 +3,12 @@ import PropTypes from 'prop-types'
 import { Formik, Form, Field } from 'formik'
 
 const ProductForm = ({
-	product,
+	product = {
+		productId: undefined,
+		productName: '',
+		price: undefined,
+		available: undefined
+	},
 	closeModal,
 	startAddNewProduct,
 	editProduct
@@ -11,15 +16,17 @@ const ProductForm = ({
 	<Fragment>
 		<div id="modal-overlay" />
 		<div id="product-form">
-			{/* {console.log(product)} */}
 			<Formik
 				initialValues={{
-					productName: product.productName || '',
-					price: product.price || undefined,
-					available: product.available || undefined
+					productName: product.productName,
+					price: product.price,
+					available: product.available
 				}}
 				onSubmit={(values, { resetForm }) => {
-					product.productId ? startAddNewProduct(values) : editProduct(values)
+					const { productId } = product
+					productId
+						? editProduct(productId, values)
+						: startAddNewProduct(values)
 					resetForm({})
 					closeModal()
 				}}

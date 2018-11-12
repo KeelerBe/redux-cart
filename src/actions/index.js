@@ -58,7 +58,8 @@ export const startAddNewProduct = (newProduct) => (dispatch, getState) => {
 	dispatch(addNewProduct(product))
 }
 
-export const editProduct = (product) => ({
+export const editProduct = (productId, product) => ({
 	type: types.EDIT_PRODUCT,
+	productId,
 	product
 })

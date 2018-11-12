@@ -6,7 +6,8 @@ import {
 	REMOVE_FROM_CART,
 	INCREMENT_QUANTITY,
 	DECREMENT_QUANTITY,
-	ADD_NEW_PRODUCT
+	ADD_NEW_PRODUCT,
+	EDIT_PRODUCT
 } from '../constants/actionTypes'
 
 const INITIAL_STATE = {
@@ -28,6 +29,13 @@ const product = produce((draft, action) => {
 		case DECREMENT_QUANTITY:
 			draft.available += 1
 			return
+		case EDIT_PRODUCT:
+			return {
+				...draft,
+				productName: action.product.productName,
+				price: action.product.price,
+				available: action.product.available
+			}
 		default:
 			break
 	}

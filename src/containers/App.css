@@ -35,11 +35,15 @@
 	margin-bottom: 0;
 }
 
-#products-list > #modal {
+#products-list > #modal > #add-new-product {
 	position: absolute;
 	top: 6%;
 	right: 6%;
 	text-align: right;
+}
+
+#modal {
+	display: inline;
 }
 
 #product-form > div > form > div > input {

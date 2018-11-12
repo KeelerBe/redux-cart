@@ -13,9 +13,9 @@ class ModalHandler extends React.Component {
 
 	render() {
 		return (
-			<section id="modal">
+			<div id="modal">
 				<ModalButton
-					id={this.props.id}
+					id={this.props.id || ''}
 					label={this.props.label}
 					onClick={this.openModal}
 				/>
@@ -31,7 +31,7 @@ class ModalHandler extends React.Component {
 						</ProductFormContainer>
 					</Modal>
 				)}
-			</section>
+			</div>
 		)
 	}
 }

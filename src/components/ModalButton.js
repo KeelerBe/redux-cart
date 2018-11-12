@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 
 const ModalButton = ({ id, label, onClick }) => (
 	<button id={id} onClick={onClick}>
-		<b>{label}</b>
+		{label}
 	</button>
 )
 

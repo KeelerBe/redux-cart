@@ -8,11 +8,7 @@ const ProductItem = ({ product, actions }) => (
 		{actions.map(
 			(action) =>
 				action.label === 'Edit' ? (
-					<ModalHandler
-						key={action.label}
-						id="edit-product"
-						label={action.label}
-					/>
+					<ModalHandler key={action.label} label={action.label} />
 				) : (
 					<button
 						key={action.label}

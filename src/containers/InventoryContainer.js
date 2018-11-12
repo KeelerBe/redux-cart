@@ -3,24 +3,18 @@ import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import { getInventoryProducts } from '../reducers'
 import { getVendorName } from '../reducers/users'
-import ModalHandler from '../components/sections/InventorySection'
+import ModalHandler from '../components/ModalHandler'
 import CompanyName from '../components/subheadings/InventorySubheading'
 import ProductsList from '../components/ProductsList'
 import ProductItem from '../components/ProductItem'
 import Product from '../components/Product'
 
-const onEditClick = () => console.log('edit')
 const onDeleteClick = () => console.log('delete')
 
-const InventoryContainer = ({
-	vendorName,
-	products
-	// onEditClick,
-	// onDeleteClick
-}) => (
+const InventoryContainer = ({ vendorName, products }) => (
 	<ProductsList
 		title="Inventory"
-		section={<ModalHandler />}
+		section={<ModalHandler id="add-new-product" label="Add new product" />}
 		subheading={<CompanyName vendorName={vendorName} />}
 	>
 		{products.map((product) => (
@@ -34,7 +28,7 @@ const InventoryContainer = ({
 					/>
 				}
 				actions={[
-					{ label: 'Edit', onClick: onEditClick },
+					{ label: 'Edit' },
 					{ label: 'Delete', onClick: onDeleteClick }
 				]}
 			/>
@@ -52,8 +46,6 @@ InventoryContainer.propTypes = {
 			available: PropTypes.number.isRequired
 		})
 	).isRequired
-	// onEditClick: PropTypes.func.isRequired,
-	// onDeleteClick: PropTypes.func.isRequired
 }
 
 const mapStateToProps = (state) => ({
@@ -61,4 +53,7 @@ const mapStateToProps = (state) => ({
 	vendorName: getVendorName(state.users)
 })
 
-export default connect(mapStateToProps)(InventoryContainer)
+export default connect(
+	mapStateToProps
+	// { editProduct }
+)(InventoryContainer)

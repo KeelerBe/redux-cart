@@ -20,7 +20,7 @@ const Product = ({
 			&#36;
 			{(price / 100).toFixed(2)}
 		</li>
-		{available ? (
+		{available >= 0 ? (
 			<li>
 				<b>Available: </b>
 				{available}

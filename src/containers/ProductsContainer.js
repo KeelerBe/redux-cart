@@ -16,31 +16,29 @@ const ProductsContainer = ({
 	cartProductIds,
 	addToCart
 }) => (
-	<div>
-		<ProductsList title="Products" section={<Greeting userName={userName} />}>
-			{products.map((product) => (
-				<ProductItem
-					key={product.productId}
-					productComponent={
-						<Product
-							productName={product.productName}
-							price={product.price}
-							vendorName={product.vendorName}
-						/>
+	<ProductsList title="Products" section={<Greeting userName={userName} />}>
+		{products.map((product) => (
+			<ProductItem
+				key={product.productId}
+				productComponent={
+					<Product
+						productName={product.productName}
+						price={product.price}
+						vendorName={product.vendorName}
+					/>
+				}
+				actions={[
+					{
+						label: product.available < 1 ? 'Sold out' : 'Add to Cart',
+						onClick: () => addToCart(product.productId),
+						disabled:
+							product.available < 1 ||
+							cartProductIds.includes(product.productId)
 					}
-					actions={[
-						{
-							label: product.available < 1 ? 'Sold out' : 'Add to Cart',
-							onClick: () => addToCart(product.productId),
-							disabled:
-								product.available < 1 ||
-								cartProductIds.includes(product.productId)
-						}
-					]}
-				/>
-			))}
-		</ProductsList>
-	</div>
+				]}
+			/>
+		))}
+	</ProductsList>
 )
 
 ProductsContainer.propTypes = {

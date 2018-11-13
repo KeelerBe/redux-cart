@@ -1,6 +1,15 @@
 import React from 'react'
-import Orders from '../components/Orders'
+import OrdersSection from '../components/sections/OrdersSection'
+import ProductsList from '../components/ProductsList'
 
-const OrdersContainer = () => <Orders />
+const OrdersContainer = () => (
+	<ProductsList
+		title="Orders"
+		section={<OrdersSection />}
+		subheading={<p>Purchases</p>}
+	>
+		<p>Children go here</p>
+	</ProductsList>
+)
 
 export default OrdersContainer

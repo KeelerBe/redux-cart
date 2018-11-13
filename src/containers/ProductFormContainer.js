@@ -1,4 +1,3 @@
-import React, { Fragment } from 'react'
 import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
 import { startAddNewProduct, editProduct } from '../actions'
@@ -7,7 +6,7 @@ const ProductFormContainer = ({
 	startAddNewProduct,
 	editProduct,
 	children
-}) => <Fragment>{children({ startAddNewProduct, editProduct })}</Fragment>
+}) => children({ startAddNewProduct, editProduct })
 
 ProductFormContainer.propTypes = {
 	startAddNewProduct: PropTypes.func.isRequired,
@@ -15,7 +14,7 @@ ProductFormContainer.propTypes = {
 	children: PropTypes.func.isRequired
 }
 
-export default connect(
+export default connect( 
 	null,
 	{ startAddNewProduct, editProduct }
 )(ProductFormContainer)

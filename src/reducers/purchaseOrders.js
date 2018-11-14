@@ -1,6 +1,5 @@
 import { produce } from 'immer'
 import { combineReducers } from 'redux'
-import { START_CHECKOUT } from '../constants/actionTypes'
 
 const INITIAL_STATE = {
 	byId: {},
@@ -9,7 +8,7 @@ const INITIAL_STATE = {
 
 const byId = produce((draft, action) => {
 	switch (action.type) {
-		case START_CHECKOUT:
+		case 'START_CHECKOUT':
 			draft[action.orderId] = {
 				orderId: action.orderId,
 				itemsList: action.itemsList,
@@ -23,7 +22,7 @@ const byId = produce((draft, action) => {
 
 const allIds = produce((draft, action) => {
 	switch (action.type) {
-		case START_CHECKOUT:
+		case 'START_CHECKOUT':
 			draft.push(action.orderId)
 			return
 		default:

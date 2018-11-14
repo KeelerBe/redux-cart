@@ -7,7 +7,7 @@ import {
 	INCREMENT_QUANTITY,
 	DECREMENT_QUANTITY,
 	DELETE_PRODUCT,
-	START_CHECKOUT
+	EMPTY_CART
 } from '../constants/actionTypes'
 
 const INITIAL_STATE = {
@@ -26,7 +26,7 @@ const allIds = produce((draft, action) => {
 			return draft.filter((id) => id !== action.productId)
 		case DELETE_PRODUCT:
 			return draft.filter((id) => id !== action.productId)
-		case START_CHECKOUT:
+		case EMPTY_CART:
 			return INITIAL_STATE.allIds
 		default:
 			return draft
@@ -52,7 +52,7 @@ const quantityById = produce((draft, action) => {
 		case DELETE_PRODUCT:
 			delete draft[action.productId]
 			return
-		case START_CHECKOUT:
+		case EMPTY_CART:
 			return INITIAL_STATE.quantityById
 		default:
 			return draft

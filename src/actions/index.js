@@ -69,8 +69,41 @@ export const deleteProduct = (productId) => ({
 	productId
 })
 
+// const emptyCart = () => ({
+// 	type: types.EMPTY_CART
+// })
+
+// const setPurchaseOrders = (purchaseOrders) => ({
+// 	types: types.SET_PURCHASE_ORDERS,
+// 	purchaseOrders
+// })
+
+// const setSalesOrders = (salesItems) => ({
+// 	type: types.SET_SALES_ORDERS,
+// 	salesItems
+// })
+
+// export const startCheckout = (products, total) => (dispatch, getState) => {
+// 	const orderId = uuidv4()
+// 	const purchaseOrders = {
+// 		orderId,
+// 		itemsList: products,
+// 		total: total
+// 	}
+// 	const salesItems =
+// 		products.reduce((obj, product) => {
+// 			if (product.userId === getState().users.currentUserId)
+// 				obj = { ...product, orderId }
+// 			return obj
+// 		}, {})
+
+// 	dispatch(emptyCart())
+// 	dispatch(setPurchaseOrders(purchaseOrders))
+// 	dispatch(setSalesOrders(salesItems))
+// }
+
 export const startCheckout = (itemsList, total) => ({
-	type: types.START_CHECKOUT,
+	type: 'START_CHECKOUT',
 	orderId: uuidv4(),
 	itemsList,
 	total

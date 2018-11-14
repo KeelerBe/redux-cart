@@ -17,7 +17,11 @@ class Orders extends Component {
 					onClick={this.toggleLabel}
 					label={this.state.default ? 'Sales' : 'Purchases'}
 				/>
-				{this.state.default ? <Purchases /> : <Sales />}
+				{this.state.default ? (
+					<Purchases purchaseOrders={this.props.purchaseOrders} />
+				) : (
+					<Sales />
+				)}
 			</Fragment>
 		)
 	}

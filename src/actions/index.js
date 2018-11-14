@@ -68,3 +68,10 @@ export const deleteProduct = (productId) => ({
 	type: types.DELETE_PRODUCT,
 	productId
 })
+
+export const startCheckout = (itemsList, total) => ({
+	type: types.START_CHECKOUT,
+	orderId: uuidv4(),
+	itemsList,
+	total
+})

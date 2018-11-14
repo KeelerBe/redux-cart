@@ -1,10 +1,16 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
-const OrdersSection = () => (
+const Orders = ({ onClick, label }) => (
 	<section>
 		<p />
-		<button>Go to Sales</button>
+		<button onClick={onClick}>Go to {label}</button>
 	</section>
 )
 
-export default OrdersSection
+Orders.propTypes = {
+	onClick: PropTypes.func.isRequired,
+	label: PropTypes.string.isRequired
+}
+
+export default Orders

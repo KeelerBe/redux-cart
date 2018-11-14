@@ -12,7 +12,7 @@ const ProductsList = ({ title, section, subheading, children }) => (
 
 ProductsList.propTypes = {
 	title: PropTypes.string.isRequired,
-	section: PropTypes.node.isRequired,
+	section: PropTypes.node,
 	subheading: PropTypes.node,
 	children: PropTypes.node.isRequired
 }

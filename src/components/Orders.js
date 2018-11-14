@@ -1,9 +1,26 @@
-import React from 'react'
+import React, { Component, Fragment } from 'react'
+import OrdersSection from './sections/OrdersSection'
+import Purchases from './Purchases'
+import Sales from './Sales'
 
-const Orders = () => (
-	<div id="orders">
-		<h2>Orders</h2>
-	</div>
-)
+class Orders extends Component {
+	state = {
+		default: true
+	}
+
+	toggleLabel = () => this.setState({ default: !this.state.default })
+
+	render() {
+		return (
+			<Fragment>
+				<OrdersSection
+					onClick={this.toggleLabel}
+					label={this.state.default ? 'Sales' : 'Purchases'}
+				/>
+				{this.state.default ? <Purchases /> : <Sales />}
+			</Fragment>
+		)
+	}
+}
 
 export default Orders

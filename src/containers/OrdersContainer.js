@@ -1,14 +1,10 @@
 import React from 'react'
-import OrdersSection from '../components/sections/OrdersSection'
+import Orders from '../components/Orders'
 import ProductsList from '../components/ProductsList'
 
 const OrdersContainer = () => (
-	<ProductsList
-		title="Orders"
-		section={<OrdersSection />}
-		subheading={<p>Purchases</p>}
-	>
-		<p>Children go here</p>
+	<ProductsList title="Orders">
+		<Orders />
 	</ProductsList>
 )
 

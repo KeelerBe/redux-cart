@@ -136,3 +136,66 @@ input[type='number'] {
 	vertical-align: middle;
 	font-weight: 600;
 }
+
+#purchases > h3,
+#sales > h3 {
+	margin-top: 30px;
+	border-bottom: 1px solid black;
+	letter-spacing: 0.05em;
+	/* padding-left: 5px; */
+}
+
+#purchases > div {
+	border-bottom: 1px solid black;
+}
+
+#purchases > div > table,
+#sales > div > table {
+	table-layout: fixed;
+	width: 100%;
+	white-space: nowrap;
+}
+
+td {
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+#purchases > div > table > thead th:nth-child(1),
+#sales > div > table > thead th:nth-child(1) {
+	text-align: left;
+	width: 40%;
+}
+
+#purchases > div > table > thead th:nth-child(2),
+#sales > div > table > thead th:nth-child(2) {
+	text-align: left;
+	width: 20%;
+}
+
+#purchases > div > table > thead th:nth-child(4),
+#purchases > div > table > tbody td:nth-child(4),
+#sales > div > table > thead th:nth-child(4),
+#sales > div > table > tbody td:nth-child(4) {
+	text-align: right;
+	width: 30px;
+	text-overflow: ellipsis;
+	padding-left: 10px;
+}
+
+#purchases > div > table > thead th:nth-child(3),
+#purchases > div > table > tbody td:nth-child(3),
+#sales > div > table > thead th:nth-child(3),
+#sales > div > table > tbody td:nth-child(3),
+#purchases > div > table > thead th:nth-child(5),
+#purchases > div > table > tbody td:nth-child(5),
+#sales > div > table > thead th:nth-child(5),
+#sales > div > table > tbody td:nth-child(5) {
+	text-align: right;
+	width: 90px;
+}
+
+#purchases > div > p:last-child {
+	text-align: right;
+}

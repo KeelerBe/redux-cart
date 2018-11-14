@@ -3,12 +3,14 @@ import users, * as fromUsers from './users'
 import products, * as fromProducts from './products'
 import cart, * as fromCart from './cart'
 import inventory, * as fromInventory from './inventory'
+import purchaseOrders from './purchaseOrders'
 
 export default combineReducers({
 	users,
 	products,
 	cart,
-	inventory
+	inventory,
+	purchaseOrders
 })
 
 const getUser = (state, userId) => fromUsers.getUser(state.users, userId)

@@ -11,6 +11,7 @@ const byId = produce((draft, action) => {
 	switch (action.type) {
 		case START_CHECKOUT:
 			draft[action.orderId] = {
+				orderId: action.orderId,
 				itemsList: action.itemsList,
 				total: action.total
 			}
@@ -22,6 +23,9 @@ const byId = produce((draft, action) => {
 
 const allIds = produce((draft, action) => {
 	switch (action.type) {
+		case START_CHECKOUT:
+			draft.push(action.orderId)
+			return
 		default:
 			return draft
 	}
@@ -31,3 +35,7 @@ export default combineReducers({
 	byId,
 	allIds
 })
+
+export const getOrderById = (state, orderId) => state.byId[orderId]
+export const getOrders = (state) =>
+	state.allIds.map((id) => getOrderById(state, id))

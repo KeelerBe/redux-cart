@@ -25,6 +25,8 @@ const getInventoryProductIds = (state) =>
 	fromInventory.getInventoryProductIds(state.inventory)
 const getVendorNameFromProduct = (state, userId) =>
 	getUser(state, userId).vendorName
+const getSubtotal = (state, productId, productPrice) =>
+	productPrice * getQuantityById(state, productId)
 
 export const getStoreProducts = (state) =>
 	getVisibleProducts(state).map((p) => {
@@ -40,6 +42,7 @@ export const getCartProducts = (state) =>
 		const product = getProduct(state, productId)
 		return {
 			...product,
+			subtotal: getSubtotal(state, productId, product.price),
 			quantity: getQuantityById(state, productId)
 		}
 	})

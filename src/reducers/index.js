@@ -63,7 +63,7 @@ export const getCartProducts = (state) =>
 export const getTotal = (state) =>
 	getCartProductIds(state).reduce((total, productId) => {
 		const { price } = getProduct(state, productId)
-		return total + (price / 100) * getQuantityById(state, productId)
+		return total + price * getQuantityById(state, productId)
 	}, 0)
 
 export const getInventoryProducts = (state) =>

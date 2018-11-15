@@ -31,7 +31,7 @@ const PurchaseOrder = ({ orderId, total, orderItems }) => (
 		<p>
 			<b>
 				Total: &#36;
-				{total.toFixed(2)}
+				{(total / 100).toFixed(2)}
 			</b>
 		</p>
 	</div>

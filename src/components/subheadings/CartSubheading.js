@@ -6,7 +6,7 @@ const Total = ({ total }) => (
 		Total:{' '}
 		<b>
 			&#36;
-			{total.toFixed(2)}
+			{(total / 100).toFixed(2)}
 		</b>
 	</p>
 )

@@ -1,6 +1,6 @@
-import { produce } from 'immer'
 import { combineReducers } from 'redux'
-import { RECEIVE_USERS } from '../constants/actionTypes'
+import { produce } from 'immer'
+import { RECEIVE_ORDERS } from '../constants/actionTypes'
 
 const INITIAL_STATE = {
 	byId: {},
@@ -9,8 +9,8 @@ const INITIAL_STATE = {
 
 const byId = produce((draft, action) => {
 	switch (action.type) {
-		case RECEIVE_USERS:
-			return action.users[action.currentUserId].cartProductIds
+		case RECEIVE_ORDERS:
+			return action.orders
 		default:
 			return draft
 	}
@@ -18,6 +18,9 @@ const byId = produce((draft, action) => {
 
 const allIds = produce((draft, action) => {
 	switch (action.type) {
+		case RECEIVE_ORDERS:
+			Object.keys(action.orders).forEach((id) => draft.push(id))
+			return
 		default:
 			return draft
 	}
@@ -28,6 +31,4 @@ export default combineReducers({
 	allIds
 })
 
-// export const getOrderById = (state, orderId) => state.byId[orderId]
-// export const getOrders = (state) =>
-// 	state.allIds.map((id) => getOrderById(state, id))
+export const getOrder = (state, orderId) => state.byId[orderId]

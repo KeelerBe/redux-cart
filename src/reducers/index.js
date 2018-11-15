@@ -3,28 +3,39 @@ import users, * as fromUsers from './users'
 import products, * as fromProducts from './products'
 import cart, * as fromCart from './cart'
 import inventory, * as fromInventory from './inventory'
-import purchaseOrders from './purchaseOrders'
-import salesOrders from './salesOrders'
+import purchases, * as fromPurchases from './purchases'
+// import purchaseOrders from './purchaseOrders'
+// import salesOrders from './salesOrders'
+import orders, * as fromOrders from './orders'
 
 export default combineReducers({
 	users,
 	products,
+	orders,
 	cart,
 	inventory,
-	purchaseOrders,
-	salesOrders
+	purchases
 })
 
+// const getCurrentUserId = (state) => fromUsers.getCurrentUserId(state.users)
 const getUser = (state, userId) => fromUsers.getUser(state.users, userId)
 const getProduct = (state, productId) =>
 	fromProducts.getProduct(state.products, productId)
 const getVisibleProducts = (state) =>
 	fromProducts.getVisibleProducts(state.products)
+
 const getCartProductIds = (state) => fromCart.getCartProductIds(state.cart)
 const getQuantityById = (state, productId) =>
 	fromCart.getQuantityById(state.cart, productId)
+
 const getInventoryProductIds = (state) =>
 	fromInventory.getInventoryProductIds(state.inventory)
+
+const getOrder = (state, orderId) => fromOrders.getOrder(state.orders, orderId)
+
+const getBuyerOrderIds = (state) =>
+	fromPurchases.getBuyerOrderIds(state.purchases)
+
 const getVendorNameFromProduct = (state, userId) =>
 	getUser(state, userId).vendorName
 const getSubtotal = (state, productId, productPrice) =>
@@ -57,3 +68,6 @@ export const getTotal = (state) =>
 
 export const getInventoryProducts = (state) =>
 	getInventoryProductIds(state).map((productId) => getProduct(state, productId))
+
+export const getPurchaseOrders = (state) =>
+	getBuyerOrderIds(state).map((orderId) => getOrder(state, orderId))

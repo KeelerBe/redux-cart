@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import PurchaseItem from './PurchaseItem'
 
-const PurchaseOrder = ({ orderId, total, itemsList }) => (
+const PurchaseOrder = ({ orderId, total, orderItems }) => (
 	<div>
 		<p>
 			<b>Order ID:</b> {orderId}
@@ -17,11 +17,11 @@ const PurchaseOrder = ({ orderId, total, itemsList }) => (
 					<th>Subtotal</th>
 				</tr>
 			</thead>
-			{itemsList.map((item) => (
+			{orderItems.map((item) => (
 				<PurchaseItem
 					key={item.productId}
 					productName={item.productName}
-					userId={item.userId}
+					vendorId={item.vendorId}
 					price={item.price}
 					quantity={item.quantity}
 					subtotal={item.subtotal}
@@ -40,11 +40,11 @@ const PurchaseOrder = ({ orderId, total, itemsList }) => (
 PurchaseOrder.propTypes = {
 	orderId: PropTypes.string.isRequired,
 	total: PropTypes.number.isRequired,
-	itemsList: PropTypes.arrayOf(
+	orderItems: PropTypes.arrayOf(
 		PropTypes.shape({
 			productId: PropTypes.string.isRequired,
 			productName: PropTypes.string.isRequired,
-			userId: PropTypes.string.isRequired,
+			vendorId: PropTypes.string.isRequired,
 			price: PropTypes.number.isRequired,
 			quantity: PropTypes.number.isRquired,
 			subtotal: PropTypes.number.isRquired

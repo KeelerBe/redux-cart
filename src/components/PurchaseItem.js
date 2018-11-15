@@ -1,11 +1,11 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-const PurchaseItem = ({ productName, userId, price, quantity, subtotal }) => (
+const PurchaseItem = ({ productName, vendorId, price, quantity, subtotal }) => (
 	<tbody>
 		<tr>
 			<td>{productName}</td>
-			<td>{userId}</td>
+			<td>{vendorId}</td>
 			<td>
 				&#36;
 				{(price / 100).toFixed(2)}
@@ -21,7 +21,7 @@ const PurchaseItem = ({ productName, userId, price, quantity, subtotal }) => (
 
 PurchaseItem.propTypes = {
 	productName: PropTypes.string,
-	userId: PropTypes.string,
+	vendorId: PropTypes.string,
 	price: PropTypes.number,
 	quantity: PropTypes.number,
 	subtotal: PropTypes.number

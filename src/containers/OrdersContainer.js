@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
-import PropTypes from 'prop-types'
+// import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
-import { getOrders } from '../reducers/purchaseOrders'
+import { getPurchaseOrders } from '../reducers/'
 import ProductsList from '../components/ProductsList'
 import OrdersSection from '../components/sections/OrdersSection'
 import PurchaseOrders from '../components/PurchaseOrders'
@@ -29,7 +29,7 @@ class OrdersContainer extends Component {
 								key={order.orderId}
 								orderId={order.orderId}
 								total={order.total}
-								itemsList={order.itemsList}
+								orderItems={order.orderItems}
 							/>
 						))}
 					</PurchaseOrders>
@@ -42,26 +42,27 @@ class OrdersContainer extends Component {
 }
 
 OrdersContainer.propTypes = {
-	purchaseOrders: PropTypes.arrayOf(
-		PropTypes.shape({
-			orderId: PropTypes.string.isRequired,
-			total: PropTypes.number.isRequired,
-			itemsList: PropTypes.arrayOf(
-				PropTypes.shape({
-					productId: PropTypes.string.isRequired,
-					productName: PropTypes.string.isRequired,
-					userId: PropTypes.string.isRequired,
-					price: PropTypes.number.isRequired,
-					quantity: PropTypes.number.isRquired,
-					subtotal: PropTypes.number.isRquired
-				})
-			)
-		})
-	).isRequired
+	// purchaseOrders: PropTypes.arrayOf(
+	// 	PropTypes.shape({
+	// 		orderId: PropTypes.string.isRequired,
+	// 		total: PropTypes.number.isRequired,
+	// 		itemsList: PropTypes.arrayOf(
+	// 			PropTypes.shape({
+	// 				productId: PropTypes.string.isRequired,
+	// 				productName: PropTypes.string.isRequired,
+	// 				vendorId: PropTypes.string.isRequired,
+	// 				price: PropTypes.number.isRequired,
+	// 				quantity: PropTypes.number.isRquired,
+	// 				subtotal: PropTypes.number.isRquired
+	// 			})
+	// 		)
+	// 	})
+	// ).isRequired
 }
 
 const mapStateToProps = (state) => ({
-	purchaseOrders: getOrders(state.purchaseOrders)
+	// purchaseOrders: getOrders(state.purchaseOrders)
+	purchaseOrders: getPurchaseOrders(state)
 })
 
 export default connect(mapStateToProps)(OrdersContainer)

@@ -1,6 +1,7 @@
 import uuidv4 from 'uuid/v4'
 import _products from '../api/products.json'
 import _users from '../api/users.json'
+import _orders from '../api/orders.json'
 import * as types from '../constants/actionTypes'
 
 const receiveProducts = (products) => ({
@@ -14,12 +15,19 @@ const receiveUsers = (users, currentUserId) => ({
 	currentUserId
 })
 
+const receiveOrders = (orders) => ({
+	type: types.RECEIVE_ORDERS,
+	orders
+})
+
 export const getInitData = () => (dispatch) => {
 	const products = _products // data fetching here
 	const users = _users
+	const orders = _orders
 	const currentUserId = 'bbeec34e-d71a-4128-8502-5bfef4776b9f'
 	dispatch(receiveProducts(products))
 	dispatch(receiveUsers(users, currentUserId))
+	dispatch(receiveOrders(orders))
 }
 
 export const addToCart = (productId) => ({

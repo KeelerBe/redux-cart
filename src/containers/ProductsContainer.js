@@ -4,7 +4,7 @@ import { connect } from 'react-redux'
 import { getStoreProducts } from '../reducers'
 import { getCurrentUserName } from '../reducers/users'
 import { getCartProductIds } from '../reducers/cart'
-import { addToCart } from '../actions'
+import { startAddToCart } from '../actions'
 import Greeting from '../components/sections/ProductsSection'
 import ProductsList from '../components/ProductsList'
 import ProductItem from '../components/ProductItem'
@@ -14,7 +14,7 @@ const ProductsContainer = ({
 	userName,
 	products,
 	cartProductIds,
-	addToCart
+	startAddToCart
 }) => (
 	<ProductsList title="Products" section={<Greeting userName={userName} />}>
 		{products.map((product) => (
@@ -30,7 +30,7 @@ const ProductsContainer = ({
 				actions={[
 					{
 						label: product.available < 1 ? 'Sold out' : 'Add to Cart',
-						onClick: () => addToCart(product.productId),
+						onClick: () => startAddToCart(product.productId),
 						disabled:
 							product.available < 1 ||
 							cartProductIds.includes(product.productId)
@@ -52,7 +52,7 @@ ProductsContainer.propTypes = {
 		})
 	).isRequired,
 	cartProductIds: PropTypes.array.isRequired,
-	addToCart: PropTypes.func.isRequired
+	startAddToCart: PropTypes.func.isRequired
 }
 
 const mapStateToProps = (state) => ({
@@ -63,5 +63,5 @@ const mapStateToProps = (state) => ({
 
 export default connect(
 	mapStateToProps,
-	{ addToCart }
+	{ startAddToCart }
 )(ProductsContainer)

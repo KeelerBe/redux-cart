@@ -30,10 +30,19 @@ export const getInitData = () => (dispatch) => {
 	dispatch(receiveOrders(orders))
 }
 
-export const addToCart = (productId) => ({
+const addToCart = (productId) => ({
 	type: types.ADD_TO_CART,
 	productId
 })
+
+export const startAddToCart = (productId) => (dispatch, getState) => {
+	if (
+		getState().products.byId[productId].vendorId ===
+		getState().users.currentUserId
+	)
+		return
+	dispatch(addToCart(productId))
+}
 
 export const removeFromCart = (productId, quantity) => ({
 	type: types.REMOVE_FROM_CART,
@@ -57,11 +66,11 @@ const addNewProduct = (product) => ({
 })
 
 export const startAddNewProduct = (newProduct) => (dispatch, getState) => {
-	const userId = getState().users.currentUserId
+	const vendorId = getState().users.currentUserId
 	const product = {
 		...newProduct,
 		productId: uuidv4(),
-		userId
+		vendorId
 	}
 	dispatch(addNewProduct(product))
 }
@@ -83,43 +92,3 @@ export const startCheckout = (products, total) => ({
 	products,
 	total
 })
-
-// const emptyCart = () => ({
-// 	type: types.EMPTY_CART
-// })
-
-// const setPurchaseOrders = (purchaseOrders) => ({
-// 	types: types.SET_PURCHASE_ORDERS,
-// 	purchaseOrders
-// })
-
-// const setSalesOrders = (salesItems) => ({
-// 	type: types.SET_SALES_ORDERS,
-// 	salesItems
-// })
-
-// export const startCheckout = (products, total) => (dispatch, getState) => {
-// 	const orderId = uuidv4()
-// 	const purchaseOrders = {
-// 		orderId,
-// 		itemsList: products,
-// 		total: total
-// 	}
-// 	const salesItems =
-// 		products.reduce((obj, product) => {
-// 			if (product.userId === getState().users.currentUserId)
-// 				obj = { ...product, orderId }
-// 			return obj
-// 		}, {})
-
-// 	dispatch(emptyCart())
-// 	dispatch(setPurchaseOrders(purchaseOrders))
-// 	dispatch(setSalesOrders(salesItems))
-// }
-
-// export const startCheckout = (itemsList, total) => ({
-// 	type: 'START_CHECKOUT',
-// 	orderId: uuidv4(),
-// 	itemsList,
-// 	total
-// })

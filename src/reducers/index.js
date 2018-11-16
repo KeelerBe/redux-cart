@@ -5,8 +5,6 @@ import cart, * as fromCart from './cart'
 import inventory, * as fromInventory from './inventory'
 import purchases, * as fromPurchases from './purchases'
 import sales, * as fromSales from './sales'
-// import purchaseOrders from './purchaseOrders'
-// import salesOrders from './salesOrders'
 import orders, * as fromOrders from './orders'
 
 export default combineReducers({

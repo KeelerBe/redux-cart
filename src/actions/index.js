@@ -77,6 +77,13 @@ export const deleteProduct = (productId) => ({
 	productId
 })
 
+export const startCheckout = (products, total) => ({
+	type: types.START_CHECKOUT,
+	orderId: uuidv4(),
+	products,
+	total
+})
+
 // const emptyCart = () => ({
 // 	type: types.EMPTY_CART
 // })
@@ -110,9 +117,9 @@ export const deleteProduct = (productId) => ({
 // 	dispatch(setSalesOrders(salesItems))
 // }
 
-export const startCheckout = (itemsList, total) => ({
-	type: 'START_CHECKOUT',
-	orderId: uuidv4(),
-	itemsList,
-	total
-})
+// export const startCheckout = (itemsList, total) => ({
+// 	type: 'START_CHECKOUT',
+// 	orderId: uuidv4(),
+// 	itemsList,
+// 	total
+// })

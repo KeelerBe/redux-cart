@@ -8,6 +8,7 @@ import PurchaseOrders from '../components/PurchaseOrders'
 import SalesOrders from '../components/SalesOrders'
 import SalesOrder from '../components/SalesOrder'
 import PurchaseOrder from '../components/PurchaseOrder'
+import Empty from '../components/Empty'
 
 class OrdersContainer extends Component {
 	state = {
@@ -24,17 +25,21 @@ class OrdersContainer extends Component {
 					label={this.state.default ? 'Sales' : 'Purchases'}
 				/>
 				{this.state.default ? (
-					<PurchaseOrders>
-						{this.props.purchaseOrders.map((order) => (
-							<PurchaseOrder
-								key={order.orderId}
-								orderId={order.orderId}
-								total={order.total}
-								orderItems={order.orderItems}
-							/>
-						))}
-					</PurchaseOrders>
-				) : (
+					this.props.purchaseOrders.length ? (
+						<PurchaseOrders>
+							{this.props.purchaseOrders.map((order) => (
+								<PurchaseOrder
+									key={order.orderId}
+									orderId={order.orderId}
+									total={order.total}
+									orderItems={order.orderItems}
+								/>
+							))}
+						</PurchaseOrders>
+					) : (
+						<Empty message="You have no purchase orders." />
+					)
+				) : this.props.salesOrders.length ? (
 					<SalesOrders>
 						{this.props.salesOrders.map((order) => (
 							<SalesOrder
@@ -45,6 +50,8 @@ class OrdersContainer extends Component {
 							/>
 						))}
 					</SalesOrders>
+				) : (
+					<Empty message="You have no sales orders." />
 				)}
 			</ProductsList>
 		)

@@ -5,7 +5,7 @@
 		"lastName": "Luettgen",
 		"email": "rebecaluettgen@yahoo.com",
 		"buyer": true,
-		"buyerOrderIds": ["09553d5e-93f4-46d9-8a59-88d1c3268fdf"],
+		"buyerOrderIds": [],
 		"cartProductIds": [
 			"08e01ab1-3226-4e9d-88c8-80527338becc",
 			"3e59a0db-1115-4d0a-8018-b1816af37afd"
@@ -16,10 +16,7 @@
 		},
 		"vendor": true,
 		"vendorName": "RL Trade",
-		"vendorOrderIds": [
-			"25137ee0-020a-4237-aecd-8f6480a5288c",
-			"5645705c-806e-4d55-83a4-975f2e35b030"
-		],
+		"vendorOrderIds": [],
 		"inventoryProductIds": [
 			"2627095e-31c3-4099-9a89-f0cedcabd989",
 			"81c4752c-583b-421d-8ea4-69e2fca24e44",

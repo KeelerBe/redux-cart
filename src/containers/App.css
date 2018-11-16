@@ -197,3 +197,9 @@ td {
 #purchases > div > p:last-child {
 	text-align: right;
 }
+#empty {
+	margin: 0 auto;
+	margin-top: 80px;
+	font-style: italic;
+	text-align: center;
+}

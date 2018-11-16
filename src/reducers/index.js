@@ -47,10 +47,10 @@ const getSubtotal = (state, productId, productPrice) =>
 
 export const getStoreProducts = (state) =>
 	getVisibleProducts(state).map((p) => {
-		const { userId, ...product } = p
+		const { vendorId, ...product } = p
 		return {
 			...product,
-			vendorName: getVendorNameFromProduct(state, userId)
+			vendorName: getVendorNameFromProduct(state, vendorId)
 		}
 	})
 

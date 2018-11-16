@@ -5,7 +5,7 @@
 		"price": 20950,
 		"available": 1,
 		"status": "active",
-		"userId": "efdc1e4e-45ed-41e3-8581-323cdc721c67"
+		"vendorId": "efdc1e4e-45ed-41e3-8581-323cdc721c67"
 	},
 	"9270f2b0-0441-4c84-8ec5-abda976936c9": {
 		"productId": "9270f2b0-0441-4c84-8ec5-abda976936c9",
@@ -13,7 +13,7 @@
 		"price": 77400,
 		"available": 0,
 		"status": "active",
-		"userId": "efdc1e4e-45ed-41e3-8581-323cdc721c67"
+		"vendorId": "efdc1e4e-45ed-41e3-8581-323cdc721c67"
 	},
 	"2627095e-31c3-4099-9a89-f0cedcabd989": {
 		"productId": "2627095e-31c3-4099-9a89-f0cedcabd989",
@@ -21,7 +21,7 @@
 		"price": 2195,
 		"available": 16,
 		"status": "active",
-		"userId": "bbeec34e-d71a-4128-8502-5bfef4776b9f"
+		"vendorId": "bbeec34e-d71a-4128-8502-5bfef4776b9f"
 	},
 	"e8ca07e6-c9f4-4d0d-9c14-04e7982128cd": {
 		"productId": "e8ca07e6-c9f4-4d0d-9c14-04e7982128cd",
@@ -29,7 +29,7 @@
 		"price": 96000,
 		"available": 2,
 		"status": "active",
-		"userId": "efdc1e4e-45ed-41e3-8581-323cdc721c67"
+		"vendorId": "efdc1e4e-45ed-41e3-8581-323cdc721c67"
 	},
 	"130c6699-2964-4cfc-989f-a5cab8d7f541": {
 		"productId": "130c6699-2964-4cfc-989f-a5cab8d7f541",
@@ -37,7 +37,7 @@
 		"price": 60750,
 		"available": 17,
 		"status": "active",
-		"userId": "efdc1e4e-45ed-41e3-8581-323cdc721c67"
+		"vendorId": "efdc1e4e-45ed-41e3-8581-323cdc721c67"
 	},
 	"061106f8-88aa-4125-8a4b-d17751618ce9": {
 		"productId": "061106f8-88aa-4125-8a4b-d17751618ce9",
@@ -45,7 +45,7 @@
 		"price": 29999,
 		"available": 11,
 		"status": "active",
-		"userId": "efdc1e4e-45ed-41e3-8581-323cdc721c67"
+		"vendorId": "efdc1e4e-45ed-41e3-8581-323cdc721c67"
 	},
 	"9b66c65f-da32-4558-a9f9-44c1c0a6d5c6": {
 		"productId": "9b66c65f-da32-4558-a9f9-44c1c0a6d5c6",
@@ -53,7 +53,7 @@
 		"price": 30375,
 		"available": 26,
 		"status": "active",
-		"userId": "901117a7-d13e-4b76-8caf-a27d8aefe736"
+		"vendorId": "901117a7-d13e-4b76-8caf-a27d8aefe736"
 	},
 	"beb98a98-af1f-467b-a43e-3ce71a9c1f27": {
 		"productId": "beb98a98-af1f-467b-a43e-3ce71a9c1f27",
@@ -61,7 +61,7 @@
 		"price": 25300,
 		"available": 22,
 		"status": "active",
-		"userId": "901117a7-d13e-4b76-8caf-a27d8aefe736"
+		"vendorId": "901117a7-d13e-4b76-8caf-a27d8aefe736"
 	},
 	"638b6cd4-7c1b-454d-a631-4071e3a87445": {
 		"productId": "638b6cd4-7c1b-454d-a631-4071e3a87445",
@@ -69,7 +69,7 @@
 		"price": 81525,
 		"available": 8,
 		"status": "active",
-		"userId": "901117a7-d13e-4b76-8caf-a27d8aefe736"
+		"vendorId": "901117a7-d13e-4b76-8caf-a27d8aefe736"
 	},
 	"81c4752c-583b-421d-8ea4-69e2fca24e44": {
 		"productId": "81c4752c-583b-421d-8ea4-69e2fca24e44",
@@ -77,7 +77,7 @@
 		"price": 46300,
 		"available": 25,
 		"status": "active",
-		"userId": "bbeec34e-d71a-4128-8502-5bfef4776b9f"
+		"vendorId": "bbeec34e-d71a-4128-8502-5bfef4776b9f"
 	},
 	"7acbc142-5b9f-40e2-83f4-37032ddd925f": {
 		"productId": "7acbc142-5b9f-40e2-83f4-37032ddd925f",
@@ -85,7 +85,7 @@
 		"price": 42200,
 		"available": 9,
 		"status": "active",
-		"userId": "efdc1e4e-45ed-41e3-8581-323cdc721c67"
+		"vendorId": "efdc1e4e-45ed-41e3-8581-323cdc721c67"
 	},
 	"22ff52c9-ee39-4736-b6b8-9efa42a7429b": {
 		"productId": "22ff52c9-ee39-4736-b6b8-9efa42a7429b",
@@ -93,7 +93,7 @@
 		"price": 975,
 		"available": 28,
 		"status": "active",
-		"userId": "bbeec34e-d71a-4128-8502-5bfef4776b9f"
+		"vendorId": "bbeec34e-d71a-4128-8502-5bfef4776b9f"
 	},
 	"0a051305-3444-476b-a6cc-a5aaf238a2cf": {
 		"productId": "0a051305-3444-476b-a6cc-a5aaf238a2cf",
@@ -101,7 +101,7 @@
 		"price": 76900,
 		"available": 23,
 		"status": "active",
-		"userId": "efdc1e4e-45ed-41e3-8581-323cdc721c67"
+		"vendorId": "efdc1e4e-45ed-41e3-8581-323cdc721c67"
 	},
 	"d5cc48a9-d755-4e95-a069-c067b80511ba": {
 		"productId": "d5cc48a9-d755-4e95-a069-c067b80511ba",
@@ -109,7 +109,7 @@
 		"price": 36150,
 		"available": 19,
 		"status": "active",
-		"userId": "bbeec34e-d71a-4128-8502-5bfef4776b9f"
+		"vendorId": "bbeec34e-d71a-4128-8502-5bfef4776b9f"
 	},
 	"eeca05d2-84b0-4d4a-8d00-c50a15cb320a": {
 		"productId": "eeca05d2-84b0-4d4a-8d00-c50a15cb320a",
@@ -117,7 +117,7 @@
 		"price": 85500,
 		"available": 21,
 		"status": "active",
-		"userId": "bbeec34e-d71a-4128-8502-5bfef4776b9f"
+		"vendorId": "bbeec34e-d71a-4128-8502-5bfef4776b9f"
 	},
 	"2bead201-3b9e-4772-a3b9-789658cc98b9": {
 		"productId": "2bead201-3b9e-4772-a3b9-789658cc98b9",
@@ -125,7 +125,7 @@
 		"price": 87115,
 		"available": 28,
 		"status": "active",
-		"userId": "bbeec34e-d71a-4128-8502-5bfef4776b9f"
+		"vendorId": "bbeec34e-d71a-4128-8502-5bfef4776b9f"
 	},
 	"08e01ab1-3226-4e9d-88c8-80527338becc": {
 		"productId": "08e01ab1-3226-4e9d-88c8-80527338becc",
@@ -133,7 +133,7 @@
 		"price": 33025,
 		"available": 9,
 		"status": "active",
-		"userId": "efdc1e4e-45ed-41e3-8581-323cdc721c67"
+		"vendorId": "efdc1e4e-45ed-41e3-8581-323cdc721c67"
 	},
 	"3e59a0db-1115-4d0a-8018-b1816af37afd": {
 		"productId": "3e59a0db-1115-4d0a-8018-b1816af37afd",
@@ -141,7 +141,7 @@
 		"price": 98900,
 		"available": 5,
 		"status": "active",
-		"userId": "efdc1e4e-45ed-41e3-8581-323cdc721c67"
+		"vendorId": "efdc1e4e-45ed-41e3-8581-323cdc721c67"
 	},
 	"db8bf420-7c17-48f9-a4b4-fdbf9f2589c1": {
 		"productId": "db8bf420-7c17-48f9-a4b4-fdbf9f2589c1",
@@ -149,7 +149,7 @@
 		"price": 19400,
 		"available": 15,
 		"status": "active",
-		"userId": "bbeec34e-d71a-4128-8502-5bfef4776b9f"
+		"vendorId": "bbeec34e-d71a-4128-8502-5bfef4776b9f"
 	},
 	"4224d21d-d508-40f4-bd79-9daf1131f9ff": {
 		"productId": "4224d21d-d508-40f4-bd79-9daf1131f9ff",
@@ -157,6 +157,6 @@
 		"price": 87825,
 		"available": 21,
 		"status": "active",
-		"userId": "bbeec34e-d71a-4128-8502-5bfef4776b9f"
+		"vendorId": "bbeec34e-d71a-4128-8502-5bfef4776b9f"
 	}
 }

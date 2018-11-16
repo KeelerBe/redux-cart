@@ -3,6 +3,7 @@ import _products from '../api/products.json'
 import _users from '../api/users.json'
 import _orders from '../api/orders.json'
 import * as types from '../constants/actionTypes'
+import { getCurrentUserId, getProduct } from '../reducers'
 
 const receiveProducts = (products) => ({
 	type: types.RECEIVE_PRODUCTS,
@@ -37,8 +38,7 @@ const addToCart = (productId) => ({
 
 export const startAddToCart = (productId) => (dispatch, getState) => {
 	if (
-		getState().products.byId[productId].vendorId ===
-		getState().users.currentUserId
+		getProduct(getState(), productId).vendorId === getCurrentUserId(getState())
 	)
 		return
 	dispatch(addToCart(productId))
@@ -66,7 +66,7 @@ const addNewProduct = (product) => ({
 })
 
 export const startAddNewProduct = (newProduct) => (dispatch, getState) => {
-	const vendorId = getState().users.currentUserId
+	const vendorId = getCurrentUserId(getState())
 	const product = {
 		...newProduct,
 		productId: uuidv4(),

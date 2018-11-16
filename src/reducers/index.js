@@ -17,9 +17,10 @@ export default combineReducers({
 	sales
 })
 
-const getCurrentUserId = (state) => fromUsers.getCurrentUserId(state.users)
+export const getCurrentUserId = (state) =>
+	fromUsers.getCurrentUserId(state.users)
 const getUser = (state, userId) => fromUsers.getUser(state.users, userId)
-const getProduct = (state, productId) =>
+export const getProduct = (state, productId) =>
 	fromProducts.getProduct(state.products, productId)
 const getVisibleProducts = (state) =>
 	fromProducts.getVisibleProducts(state.products)

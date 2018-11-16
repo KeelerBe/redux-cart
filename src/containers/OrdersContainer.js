@@ -1,11 +1,12 @@
 import React, { Component } from 'react'
-// import PropTypes from 'prop-types'
+import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
-import { getPurchaseOrders } from '../reducers/'
+import { getPurchaseOrders, getSalesOrders } from '../reducers/'
 import ProductsList from '../components/ProductsList'
 import OrdersSection from '../components/sections/OrdersSection'
 import PurchaseOrders from '../components/PurchaseOrders'
-import Sales from '../components/Sales'
+import SalesOrders from '../components/SalesOrders'
+import SalesOrder from '../components/SalesOrder'
 import PurchaseOrder from '../components/PurchaseOrder'
 
 class OrdersContainer extends Component {
@@ -34,7 +35,16 @@ class OrdersContainer extends Component {
 						))}
 					</PurchaseOrders>
 				) : (
-					<Sales />
+					<SalesOrders>
+						{this.props.salesOrders.map((order) => (
+							<SalesOrder
+								key={order.orderId}
+								orderId={order.orderId}
+								buyerId={order.buyerId}
+								orderItems={order.orderItems}
+							/>
+						))}
+					</SalesOrders>
 				)}
 			</ProductsList>
 		)
@@ -42,27 +52,41 @@ class OrdersContainer extends Component {
 }
 
 OrdersContainer.propTypes = {
-	// purchaseOrders: PropTypes.arrayOf(
-	// 	PropTypes.shape({
-	// 		orderId: PropTypes.string.isRequired,
-	// 		total: PropTypes.number.isRequired,
-	// 		itemsList: PropTypes.arrayOf(
-	// 			PropTypes.shape({
-	// 				productId: PropTypes.string.isRequired,
-	// 				productName: PropTypes.string.isRequired,
-	// 				vendorId: PropTypes.string.isRequired,
-	// 				price: PropTypes.number.isRequired,
-	// 				quantity: PropTypes.number.isRquired,
-	// 				subtotal: PropTypes.number.isRquired
-	// 			})
-	// 		)
-	// 	})
-	// ).isRequired
+	purchaseOrders: PropTypes.arrayOf(
+		PropTypes.shape({
+			orderId: PropTypes.string.isRequired,
+			total: PropTypes.number.isRequired,
+			orderItems: PropTypes.arrayOf(
+				PropTypes.shape({
+					productId: PropTypes.string.isRequired,
+					productName: PropTypes.string.isRequired,
+					vendorId: PropTypes.string.isRequired,
+					price: PropTypes.number.isRequired,
+					quantity: PropTypes.number.isRquired,
+					subtotal: PropTypes.number.isRquired
+				})
+			)
+		})
+	).isRequired,
+	salesOrders: PropTypes.arrayOf(
+		PropTypes.shape({
+			orderId: PropTypes.string.isRequired,
+			orderItems: PropTypes.arrayOf(
+				PropTypes.shape({
+					productId: PropTypes.string.isRequired,
+					productName: PropTypes.string.isRequired,
+					price: PropTypes.number.isRequired,
+					quantity: PropTypes.number.isRquired,
+					subtotal: PropTypes.number.isRquired
+				})
+			)
+		})
+	).isRequired
 }
 
 const mapStateToProps = (state) => ({
-	// purchaseOrders: getOrders(state.purchaseOrders)
-	purchaseOrders: getPurchaseOrders(state)
+	purchaseOrders: getPurchaseOrders(state),
+	salesOrders: getSalesOrders(state)
 })
 
 export default connect(mapStateToProps)(OrdersContainer)

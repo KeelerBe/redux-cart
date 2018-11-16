@@ -19,7 +19,7 @@ export default combineReducers({
 	sales
 })
 
-// const getCurrentUserId = (state) => fromUsers.getCurrentUserId(state.users)
+const getCurrentUserId = (state) => fromUsers.getCurrentUserId(state.users)
 const getUser = (state, userId) => fromUsers.getUser(state.users, userId)
 const getProduct = (state, productId) =>
 	fromProducts.getProduct(state.products, productId)
@@ -76,5 +76,18 @@ export const getInventoryProducts = (state) =>
 export const getPurchaseOrders = (state) =>
 	getBuyerOrderIds(state).map((orderId) => getOrder(state, orderId))
 
-export const getSalesOrders = (state) =>
-	getVendorOrderIds(state).map((orderId) => getOrder(state, orderId))
+export const getSalesOrders = (state) => {
+	const orders = getVendorOrderIds(state).map((orderId) =>
+		getOrder(state, orderId)
+	)
+	return orders.map((order) => {
+		const orderItems = order.orderItems.filter(
+			(item) => item.vendorId === getCurrentUserId(state)
+		)
+		return {
+			orderId: order.orderId,
+			buyerId: order.buyerId,
+			orderItems
+		}
+	})
+}

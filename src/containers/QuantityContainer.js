@@ -1,8 +1,8 @@
 import React from 'react'
-import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
-import { getAvailable } from '../reducers/products'
+import { connect } from 'react-redux'
 import { incrementQuantity, decrementQuantity } from '../actions'
+import { getAvailable } from '../reducers/products'
 import QuantityField from '../components/QuantityField'
 
 const QuantityContainer = ({

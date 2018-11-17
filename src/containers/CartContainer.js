@@ -1,9 +1,9 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
+import { removeFromCart, startCheckout } from '../actions'
 import { getCartProducts, getTotal } from '../reducers'
 import { getNumOfItems } from '../reducers/cart'
-import { removeFromCart, startCheckout } from '../actions'
 import CartSummary from '../components/sections/CartSection'
 import Total from '../components/subheadings/CartSubheading'
 import ProductsList from '../components/ProductsList'
@@ -23,29 +23,27 @@ const CartContainer = ({
 			<CartSummary
 				numOfItems={numOfItems}
 				onClick={() => startCheckout(products, total)}
-			/>
+			/> 
 		}
-		subheading={<Total total={total} />}
-	>
-		{products.map((product) => (
-			<ProductItem
-				key={product.productId}
-				productComponent={
-					<Product
-						productId={product.productId}
-						productName={product.productName}
-						price={product.price}
-						quantity={product.quantity}
-					/>
-				}
-				actions={[
-					{
-						label: 'Remove',
-						onClick: () => removeFromCart(product.productId, product.quantity)
+		subheading={<Total total={total} />}>
+		
+		{ products.map((product) => (
+				<ProductItem
+					key={product.productId}
+					productComponent={
+						<Product
+							productId={product.productId}
+							productName={product.productName}
+							price={product.price}
+							quantity={product.quantity}
+						/> 
 					}
-				]}
-			/>
-		))}
+					actions={[
+						{ label: 'Remove', 
+							onClick: 
+								() => removeFromCart(product.productId, product.quantity) }
+					]}
+				/> )) }
 	</ProductsList>
 )
 

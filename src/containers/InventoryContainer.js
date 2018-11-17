@@ -5,7 +5,6 @@ import { deleteProduct } from '../actions'
 import { getInventoryProducts } from '../reducers'
 import { getVendorName } from '../reducers/users'
 import ModalHandler from '../components/ModalHandler'
-// import CompanyName from '../components/subheadings/InventorySubheading'
 import ProductsList from '../components/ProductsList'
 import ProductItem from '../components/ProductItem'
 import Product from '../components/Product'
@@ -14,28 +13,31 @@ import Empty from '../components/Empty'
 const InventoryContainer = ({ vendorName, products, deleteProduct }) => (
 	<ProductsList
 		title="Inventory"
-		section={<ModalHandler id="add-new-product" label="Add new product" />}
+		section={
+			<ModalHandler 
+				id="add-new-product" 
+				label="Add new product" 
+			/>
+		}
 		subheading={<p>{vendorName}</p>}>
-		{products.length ? (
-			products.map((product) => (
-				<ProductItem
-					key={product.productId}
-					productComponent={
-						<Product
-							productName={product.productName}
-							price={product.price}
-							available={product.available}
-						/>
-					}
-					actions={[
-						{ label: 'Edit', product: product },
-						{ label: 'Delete', onClick: () => deleteProduct(product.productId) }
-					]}
-				/>
-			))
-		) : (
-			<Empty message="There are no products in your inventory." />
-		)}
+		
+		{ products.length 
+				? products.map((product) => (
+					<ProductItem
+						key={product.productId}
+						productComponent={
+							<Product
+								productName={product.productName}
+								price={product.price}
+								available={product.available}
+							/>
+						}
+						actions={[
+							{ label: 'Edit', product: product },
+							{ label: 'Delete', onClick: () => deleteProduct(product.productId) }
+						]}
+					/> ))
+				: <Empty message="There are no products in your inventory." /> }
 	</ProductsList>
 )
 

@@ -3,9 +3,7 @@ import PropTypes from 'prop-types'
 
 const Greeting = ({ userName }) => (
 	<section>
-		<p>
-			Hello, <b>{userName || 'user'}</b>!
-		</p>
+		<p>Hello, <b>{userName || 'user'}</b>!</p>
 		<button>{userName ? 'Sign out' : 'Sign in'}</button>
 	</section>
 )

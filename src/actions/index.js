@@ -37,10 +37,10 @@ const addToCart = (productId) => ({
 })
 
 export const startAddToCart = (productId) => (dispatch, getState) => {
-	if (
-		getProduct(getState(), productId).vendorId === getCurrentUserId(getState())
-	)
-		return
+	const { vendorId } = getProduct(getState(), productId)
+	const currentUserId = getCurrentUserId(getState())
+
+	if (vendorId === currentUserId) return
 	dispatch(addToCart(productId))
 }
 
@@ -66,12 +66,13 @@ const addNewProduct = (product) => ({
 })
 
 export const startAddNewProduct = (newProduct) => (dispatch, getState) => {
-	const vendorId = getCurrentUserId(getState())
+	const vendorId = getCurrentUserId(getState()) // current user is vendor
 	const product = {
 		...newProduct,
 		productId: uuidv4(),
 		vendorId
 	}
+
 	dispatch(addNewProduct(product))
 }
 

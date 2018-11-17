@@ -11,33 +11,20 @@ const Product = ({
 	vendorName
 }) => (
 	<div>
-		<li>
-			<b>Product Name: </b>
-			{productName}
-		</li>
-		<li>
-			<b>Price: </b>
-			&#36;
-			{(price / 100).toFixed(2)}
-		</li>
-		{available >= 0 ? (
-			<li>
-				<b>Available: </b>
-				{available}
-			</li>
-		) : null}
-		{quantity ? (
-			<li>
-				<b>Quantity: </b>
-				<QuantityContainer quantity={quantity} productId={productId} />
-			</li>
-		) : null}
-		{vendorName ? (
-			<li>
-				<b>Vendor: </b>
-				{vendorName}
-			</li>
-		) : null}
+		<li><b>Product Name: </b>{productName}</li>
+		<li><b>Price: </b>&#36;{(price / 100).toFixed(2)}</li>
+		{ available >= 0 
+				? <li><b>Available: </b>{available}</li>
+				: null }
+		{ quantity 
+				? <li>
+						<b>Quantity: </b>
+						<QuantityContainer quantity={quantity} productId={productId} />
+					</li>
+				: null }
+		{ vendorName 
+				? <li><b>Vendor: </b>{vendorName}</li>
+				: null }
 	</div>
 )
 

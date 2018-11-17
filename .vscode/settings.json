@@ -11,12 +11,13 @@
 	"editor.fontLigatures": true,
 	"terminal.integrated.fontFamily": "fira code",
 	"editor.letterSpacing": 0.5,
-	"prettier.arrowParens": "always",
 	"prettier.useTabs": true,
-	"editor.formatOnSave": true,
 	"prettier.semi": false,
-	"prettier.eslintIntegration": true,
 	"eslint.autoFixOnSave": true,
-	"html.format.wrapAttributes": "aligned-multiple",
-	"prettier.singleQuote": true
+	"html.format.wrapLineLength": 80,
+	"prettier.singleQuote": true,
+	"prettier.proseWrap": "preserve",
+	"prettier.jsxBracketSameLine": true,
+	"prettier.arrowParens": "always",
+	"[javascriptreact]": { "editor.formatOnSave": true }
 }

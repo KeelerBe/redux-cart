@@ -5,7 +5,7 @@ import { deleteProduct } from '../actions'
 import { getInventoryProducts } from '../reducers'
 import { getVendorName } from '../reducers/users'
 import ModalHandler from '../components/ModalHandler'
-import CompanyName from '../components/subheadings/InventorySubheading'
+// import CompanyName from '../components/subheadings/InventorySubheading'
 import ProductsList from '../components/ProductsList'
 import ProductItem from '../components/ProductItem'
 import Product from '../components/Product'
@@ -15,8 +15,7 @@ const InventoryContainer = ({ vendorName, products, deleteProduct }) => (
 	<ProductsList
 		title="Inventory"
 		section={<ModalHandler id="add-new-product" label="Add new product" />}
-		subheading={<CompanyName vendorName={vendorName} />}
-	>
+		subheading={<p>{vendorName}</p>}>
 		{products.length ? (
 			products.map((product) => (
 				<ProductItem

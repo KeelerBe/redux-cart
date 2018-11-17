@@ -1,3 +1,4 @@
+/* eslint-disable */
 import produce from 'immer'
 import { RECEIVE_USERS } from '../constants/actionTypes'
 

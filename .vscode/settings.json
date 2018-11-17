@@ -20,8 +20,11 @@
 	"prettier.jsxBracketSameLine": true,
 	"prettier.arrowParens": "always",
 	"[javascriptreact]": { "editor.formatOnSave": true },
-	"eslint.options": {
-		"rules": {"default-case": 0}
-	}
+	// "eslint.options": {
+	// 	"rules": {
+	// 		"default-case": 0,
+	// 		"no-warning-comments": [0]
+	// 	}
+	// }
 
 }

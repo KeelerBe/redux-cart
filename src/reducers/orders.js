@@ -1,3 +1,4 @@
+/* eslint-disable */
 import { combineReducers } from 'redux'
 import { produce } from 'immer'
 import { RECEIVE_ORDERS, START_CHECKOUT } from '../constants/actionTypes'

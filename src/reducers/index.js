@@ -1,11 +1,11 @@
 import { combineReducers } from 'redux'
 import users, * as fromUsers from './users'
 import products, * as fromProducts from './products'
+import orders, * as fromOrders from './orders'
 import cart, * as fromCart from './cart'
 import inventory, * as fromInventory from './inventory'
 import purchases, * as fromPurchases from './purchases'
 import sales, * as fromSales from './sales'
-import orders, * as fromOrders from './orders'
 
 export default combineReducers({
 	users,

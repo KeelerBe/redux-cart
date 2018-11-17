@@ -32,12 +32,10 @@ const product = produce((draft, action) => {
 			draft.available += 1
 			return
 		case EDIT_PRODUCT:
-			return {
-				...draft,
-				productName: action.product.productName,
-				price: action.product.price,
-				available: action.product.available
-			}
+			draft.productName =  action.product.productName,
+			draft.price = action.product.price,
+			draft.available = action.product.available
+			return
 	}
 })
 
@@ -47,10 +45,10 @@ const byId = produce((draft, action) => {
 			return action.products
 		case ADD_NEW_PRODUCT:
 			draft[action.product.productId] = action.product
-			break
+			return
 		case DELETE_PRODUCT:
 			delete draft[action.productId]
-			break
+			return
 		default:
 			const { productId } = action
 			if (productId) {
@@ -64,10 +62,10 @@ const visibleIds = produce((draft, action) => {
 	switch (action.type) {
 		case RECEIVE_PRODUCTS:
 			Object.keys(action.products).forEach((id) => draft.push(id))
-			break
+			return
 		case ADD_NEW_PRODUCT:
 			draft.splice(0, 0, action.product.productId)
-			break
+			return
 		case DELETE_PRODUCT:
 			return draft.filter((id) => id !== action.productId)
 	}
@@ -79,7 +77,10 @@ export default combineReducers({
 })
 
 export const getProduct = (state, productId) => state.byId[productId]
-export const getVisibleProducts = (state) =>
-	state.visibleIds.map((productId) => getProduct(state, productId))
-export const getAvailable = (state, productId) =>
-	getProduct(state, productId).available
+
+export const getVisibleProducts = 
+	(state) => state.visibleIds.map((productId) => 
+		getProduct(state, productId))
+
+export const getAvailable = 
+	(state, productId) => getProduct(state, productId).available

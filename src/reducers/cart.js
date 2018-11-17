@@ -22,7 +22,7 @@ const allIds = produce((draft, action) => {
 			return action.users[action.currentUserId].cartProductIds
 		case ADD_TO_CART:
 			draft.push(action.productId)
-			break
+			return
 		case REMOVE_FROM_CART:
 			return draft.filter((id) => id !== action.productId)
 		case DELETE_PRODUCT:
@@ -38,19 +38,19 @@ const quantityById = produce((draft, action) => {
 			return action.users[action.currentUserId].cartProductQuantityById
 		case ADD_TO_CART:
 			draft[action.productId] = 1
-			break
+			return
 		case REMOVE_FROM_CART:
 			delete draft[action.productId]
-			break
+			return
 		case INCREMENT_QUANTITY:
 			draft[action.productId] += 1
-			break
+			return
 		case DECREMENT_QUANTITY:
 			draft[action.productId] -= 1
-			break
+			return
 		case DELETE_PRODUCT:
 			delete draft[action.productId]
-			break
+			return
 		case START_CHECKOUT:
 			return INITIAL_STATE.quantityById
 	}
@@ -62,11 +62,11 @@ export default combineReducers({
 })
 
 export const getCartProductIds = (state) => state.allIds
-export const getQuantityById = (state, productId) =>
-	state.quantityById[productId]
 
-export const getNumOfItems = (state) =>
-	getCartProductIds(state).reduce(
-		(total, productId) => total + getQuantityById(state, productId),
-		0
-	)
+export const getQuantityById = 
+	(state, productId) => state.quantityById[productId]
+
+export const getNumOfItems = 
+	(state) => getCartProductIds(state).reduce((total, productId) => 
+		total + getQuantityById(state, productId)
+	, 0)

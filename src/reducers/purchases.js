@@ -12,7 +12,7 @@ export default produce((draft, action) => {
 			return action.users[action.currentUserId].buyerOrderIds
 		case START_CHECKOUT:
 			draft.push(action.orderId)
-			break
+			return
 	}
 }, INITIAL_STATE.allIds)
 

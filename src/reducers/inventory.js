@@ -16,7 +16,7 @@ export default produce((draft, action) => {
 			return action.users[action.currentUserId].inventoryProductIds
 		case ADD_NEW_PRODUCT:
 			draft.push(action.product.productId)
-			break
+			return
 		case DELETE_PRODUCT:
 			return draft.filter((id) => id !== action.productId)
 	}

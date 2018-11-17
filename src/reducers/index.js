@@ -17,32 +17,38 @@ export default combineReducers({
 	sales
 })
 
-export const getCurrentUserId = (state) =>
-	fromUsers.getCurrentUserId(state.users)
 const getUser = (state, userId) => fromUsers.getUser(state.users, userId)
-export const getProduct = (state, productId) =>
-	fromProducts.getProduct(state.products, productId)
-const getVisibleProducts = (state) =>
-	fromProducts.getVisibleProducts(state.products)
+
+const getVisibleProducts = 
+	(state) => fromProducts.getVisibleProducts(state.products)
 
 const getCartProductIds = (state) => fromCart.getCartProductIds(state.cart)
-const getQuantityById = (state, productId) =>
-	fromCart.getQuantityById(state.cart, productId)
 
-const getInventoryProductIds = (state) =>
-	fromInventory.getInventoryProductIds(state.inventory)
+const getQuantityById = 
+	(state, productId) => fromCart.getQuantityById(state.cart, productId)
+
+const getInventoryProductIds = 
+	(state) => fromInventory.getInventoryProductIds(state.inventory)
 
 const getOrder = (state, orderId) => fromOrders.getOrder(state.orders, orderId)
 
-const getBuyerOrderIds = (state) =>
-	fromPurchases.getBuyerOrderIds(state.purchases)
+const getBuyerOrderIds = 
+	(state) => fromPurchases.getBuyerOrderIds(state.purchases)
 
 const getVendorOrderIds = (state) => fromSales.getVendorOrderIds(state.sales)
 
-const getVendorNameFromProduct = (state, userId) =>
-	getUser(state, userId).vendorName
-const getSubtotal = (state, productId, productPrice) =>
-	productPrice * getQuantityById(state, productId)
+const getVendorNameFromProduct = 
+	(state, userId) => getUser(state, userId).vendorName
+
+const getSubtotal = 
+	(state, productId, productPrice ) => 
+		productPrice * getQuantityById(state, productId)
+
+export const getProduct = 
+	(state, productId) => fromProducts.getProduct(state.products, productId)	
+
+export const getCurrentUserId = 
+	(state) => fromUsers.getCurrentUserId(state.users)
 
 export const getStoreProducts = (state) =>
 	getVisibleProducts(state).map((p) => {
@@ -70,7 +76,8 @@ export const getTotal = (state) =>
 	}, 0)
 
 export const getInventoryProducts = (state) =>
-	getInventoryProductIds(state).map((productId) => getProduct(state, productId))
+	getInventoryProductIds(state).map((productId) => 
+		getProduct(state, productId))
 
 export const getPurchaseOrders = (state) =>
 	getBuyerOrderIds(state).map((orderId) => getOrder(state, orderId))

@@ -18,7 +18,7 @@ const byId = produce((draft, action) => {
 				total: action.total,
 				orderItems: action.products
 			}
-			break
+			return
 	}
 }, INITIAL_STATE.byId)
 
@@ -26,10 +26,10 @@ const allIds = produce((draft, action) => {
 	switch (action.type) {
 		case RECEIVE_ORDERS:
 			Object.keys(action.orders).forEach((id) => draft.push(id))
-			break
+			return
 		case START_CHECKOUT:
 			draft.push(action.orderId)
-			break
+			return
 	}
 }, INITIAL_STATE.allIds)
 

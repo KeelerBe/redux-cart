@@ -24,35 +24,30 @@ class OrdersContainer extends Component {
 					onClick={this.toggleLabel}
 					label={this.state.default ? 'Sales' : 'Purchases'}
 				/>
-				{this.state.default ? (
-					this.props.purchaseOrders.length ? (
-						<PurchaseOrders>
-							{this.props.purchaseOrders.map((order) => (
-								<PurchaseOrder
-									key={order.orderId}
-									orderId={order.orderId}
-									total={order.total}
-									orderItems={order.orderItems}
-								/>
-							))}
-						</PurchaseOrders>
-					) : (
-						<Empty message="You have no purchase orders." />
-					)
-				) : this.props.salesOrders.length ? (
-					<SalesOrders>
-						{this.props.salesOrders.map((order) => (
-							<SalesOrder
-								key={order.orderId}
-								orderId={order.orderId}
-								buyerId={order.buyerId}
-								orderItems={order.orderItems}
-							/>
-						))}
-					</SalesOrders>
-				) : (
-					<Empty message="You have no sales orders." />
-				)}
+				{ this.state.default 
+						? this.props.purchaseOrders.length 
+								? <PurchaseOrders>
+										{ this.props.purchaseOrders.map((order) => (
+												<PurchaseOrder
+													key={order.orderId}
+													orderId={order.orderId}
+													total={order.total}
+													orderItems={order.orderItems}
+												/> )) }
+									</PurchaseOrders> 
+								: <Empty message="You have no purchase orders." />
+		
+						: this.props.salesOrders.length 
+								? <SalesOrders>
+										{ this.props.salesOrders.map((order) => (
+											<SalesOrder
+												key={order.orderId}
+												orderId={order.orderId}
+												buyerId={order.buyerId}
+												orderItems={order.orderItems}
+											/> )) }
+									</SalesOrders>
+								: <Empty message="You have no sales orders." /> }
 			</ProductsList>
 		)
 	}

@@ -3,21 +3,14 @@ import PropTypes from 'prop-types'
 
 const SalesOrder = ({ orderId, orderItems }) => (
 	<tbody>
-		{orderItems.map((item) => (
-			<tr key={item.productId}>
-				<td>{item.productName}</td>
-				<td>{orderId}</td>
-				<td>
-					&#36;
-					{(item.price / 100).toFixed(2)}
-				</td>
-				<td>{item.quantity}</td>
-				<td>
-					&#36;
-					{(item.subtotal / 100).toFixed(2)}
-				</td>
-			</tr>
-		))}
+		{ orderItems.map((item) => (
+				<tr key={item.productId}>
+					<td>{item.productName}</td>
+					<td>{orderId}</td>
+					<td>&#36;{(item.price / 100).toFixed(2)}</td>
+					<td>{item.quantity}</td>
+					<td>&#36;{(item.subtotal / 100).toFixed(2)}</td>
+				</tr> )) }
 	</tbody>
 )
 

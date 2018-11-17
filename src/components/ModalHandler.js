@@ -19,20 +19,19 @@ class ModalHandler extends React.Component {
 					label={this.props.label}
 					onClick={this.openModal}
 				/>
-				{this.state.showModal && (
-					<Modal>
-						<ProductFormContainer>
-							{({ startAddNewProduct, editProduct }) => (
-								<ProductForm
-									closeModal={this.closeModal}
-									startAddNewProduct={startAddNewProduct}
-									editProduct={editProduct}
-									product={this.props.product}
-								/>
-							)}
-						</ProductFormContainer>
-					</Modal>
-				)}
+				{ this.state.showModal && (
+						<Modal>
+							<ProductFormContainer>
+								{({ startAddNewProduct, editProduct }) => (
+									<ProductForm
+										closeModal={this.closeModal}
+										startAddNewProduct={startAddNewProduct}
+										editProduct={editProduct}
+										product={this.props.product}
+									/>
+								)}
+							</ProductFormContainer>
+						</Modal> ) }
 			</div>
 		)
 	}

@@ -17,23 +17,18 @@ const PurchaseOrder = ({ orderId, total, orderItems }) => (
 					<th>Subtotal</th>
 				</tr>
 			</thead>
-			{orderItems.map((item) => (
-				<PurchaseItem
-					key={item.productId}
-					productName={item.productName}
-					vendorId={item.vendorId}
-					price={item.price}
-					quantity={item.quantity}
-					subtotal={item.subtotal}
-				/>
-			))}
+
+			{ orderItems.map((item) => (
+					<PurchaseItem
+						key={item.productId}
+						productName={item.productName}
+						vendorId={item.vendorId}
+						price={item.price}
+						quantity={item.quantity}
+						subtotal={item.subtotal}
+					/> )) }		
 		</table>
-		<p>
-			<b>
-				Total: &#36;
-				{(total / 100).toFixed(2)}
-			</b>
-		</p>
+		<p><b>Total: &#36;{(total / 100).toFixed(2)}</b></p>
 	</div>
 )
 

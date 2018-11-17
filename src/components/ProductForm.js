@@ -29,8 +29,7 @@ const ProductForm = ({
 						: startAddNewProduct(values)
 					resetForm({})
 					closeModal()
-				}}
-			>
+				}}>
 				{() => (
 					<div>
 						<Form>

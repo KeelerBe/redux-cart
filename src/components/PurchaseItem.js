@@ -6,15 +6,9 @@ const PurchaseItem = ({ productName, vendorId, price, quantity, subtotal }) => (
 		<tr>
 			<td>{productName}</td>
 			<td>{vendorId}</td>
-			<td>
-				&#36;
-				{(price / 100).toFixed(2)}
-			</td>
+			<td>&#36;{(price / 100).toFixed(2)}</td>
 			<td>{quantity}</td>
-			<td>
-				&#36;
-				{(subtotal / 100).toFixed(2)}
-			</td>
+			<td>&#36;{(subtotal / 100).toFixed(2)}</td>
 		</tr>
 	</tbody>
 )

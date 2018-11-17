@@ -5,24 +5,21 @@ import ModalHandler from '../components/ModalHandler'
 const ProductItem = ({ productComponent, actions }) => (
 	<div id="product-item">
 		{productComponent}
-		{actions.map(
-			(action) =>
-				action.label === 'Edit' ? (
-					<ModalHandler
-						key={action.label}
-						label={action.label}
-						product={action.product}
-					/>
-				) : (
-					<button
-						key={action.label}
-						onClick={action.onClick}
-						disabled={action.disabled}
-					>
-						{action.label}
-					</button>
-				)
-		)}
+		
+		{ actions.map((action) =>
+				action.label === 'Edit' 
+					? <ModalHandler
+							key={action.label}
+							label={action.label}
+							product={action.product}
+						/>
+				  : <button
+							key={action.label}
+							onClick={action.onClick}
+							disabled={action.disabled}
+						>
+							{action.label}
+						</button> ) }
 	</div>
 )
 

@@ -19,5 +19,9 @@
 	"prettier.proseWrap": "preserve",
 	"prettier.jsxBracketSameLine": true,
 	"prettier.arrowParens": "always",
-	"[javascriptreact]": { "editor.formatOnSave": true }
+	"[javascriptreact]": { "editor.formatOnSave": true },
+	"eslint.options": {
+		"rules": {"default-case": 0}
+	}
+
 }

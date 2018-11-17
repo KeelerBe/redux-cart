@@ -11,8 +11,6 @@ const currentUserId = produce((draft, action) => {
 	switch (action.type) {
 		case RECEIVE_USERS:
 			return action.currentUserId
-		default:
-			return draft
 	}
 }, INITIAL_STATE.currentUserId)
 
@@ -20,8 +18,6 @@ const byId = produce((draft, action) => {
 	switch (action.type) {
 		case RECEIVE_USERS:
 			return action.users
-		default:
-			return draft
 	}
 }, INITIAL_STATE.byId)
 

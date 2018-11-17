@@ -9,8 +9,6 @@ export default produce((draft, action) => {
 	switch (action.type) {
 		case RECEIVE_USERS:
 			return action.users[action.currentUserId].vendorOrderIds
-		default:
-			return draft
 	}
 }, INITIAL_STATE.allIds)
 

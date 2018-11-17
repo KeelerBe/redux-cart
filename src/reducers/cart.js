@@ -21,15 +21,13 @@ const allIds = produce((draft, action) => {
 			return action.users[action.currentUserId].cartProductIds
 		case ADD_TO_CART:
 			draft.push(action.productId)
-			return
+			break
 		case REMOVE_FROM_CART:
 			return draft.filter((id) => id !== action.productId)
 		case DELETE_PRODUCT:
 			return draft.filter((id) => id !== action.productId)
 		case START_CHECKOUT:
 			return INITIAL_STATE.allIds
-		default:
-			return draft
 	}
 }, INITIAL_STATE.allIds)
 
@@ -39,23 +37,21 @@ const quantityById = produce((draft, action) => {
 			return action.users[action.currentUserId].cartProductQuantityById
 		case ADD_TO_CART:
 			draft[action.productId] = 1
-			return
+			break
 		case REMOVE_FROM_CART:
 			delete draft[action.productId]
-			return
+			break
 		case INCREMENT_QUANTITY:
 			draft[action.productId] += 1
-			return
+			break
 		case DECREMENT_QUANTITY:
 			draft[action.productId] -= 1
-			return
+			break
 		case DELETE_PRODUCT:
 			delete draft[action.productId]
-			return
+			break
 		case START_CHECKOUT:
 			return INITIAL_STATE.quantityById
-		default:
-			return draft
 	}
 }, INITIAL_STATE.quantityById)
 

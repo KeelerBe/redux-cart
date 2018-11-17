@@ -37,8 +37,6 @@ const product = produce((draft, action) => {
 				price: action.product.price,
 				available: action.product.available
 			}
-		default:
-			break
 	}
 })
 
@@ -48,10 +46,10 @@ const byId = produce((draft, action) => {
 			return action.products
 		case ADD_NEW_PRODUCT:
 			draft[action.product.productId] = action.product
-			return
+			break
 		case DELETE_PRODUCT:
 			delete draft[action.productId]
-			return
+			break
 		default:
 			const { productId } = action
 			if (productId) {
@@ -65,14 +63,12 @@ const visibleIds = produce((draft, action) => {
 	switch (action.type) {
 		case RECEIVE_PRODUCTS:
 			Object.keys(action.products).forEach((id) => draft.push(id))
-			return
+			break
 		case ADD_NEW_PRODUCT:
 			draft.splice(0, 0, action.product.productId)
-			return
+			break
 		case DELETE_PRODUCT:
 			return draft.filter((id) => id !== action.productId)
-		default:
-			return draft
 	}
 }, INITIAL_STATE.visibleIds)
 

@@ -3,7 +3,8 @@ import _products from '../api/products.json'
 import _users from '../api/users.json'
 import _orders from '../api/orders.json'
 import * as types from '../constants/actionTypes'
-import { getCurrentUserId, getProduct } from '../reducers'
+import { getCurrentUserId } from '../reducers/users'
+import { getProduct } from '../reducers/products'
 
 const receiveProducts = (products) => ({
 	type: types.RECEIVE_PRODUCTS,
@@ -22,7 +23,7 @@ const receiveOrders = (orders) => ({
 })
 
 export const getInitData = () => (dispatch) => {
-	const products = _products // data fetching here
+	const products = _products /* data fetching here */
 	const users = _users
 	const orders = _orders
 	const currentUserId = 'bbeec34e-d71a-4128-8502-5bfef4776b9f'
@@ -37,8 +38,9 @@ const addToCart = (productId) => ({
 })
 
 export const startAddToCart = (productId) => (dispatch, getState) => {
-	const { vendorId } = getProduct(getState(), productId)
-	const currentUserId = getCurrentUserId(getState())
+	const { products, users } = getState()
+	const { vendorId } = getProduct(products, productId)
+	const currentUserId = getCurrentUserId(users)
 
 	if (vendorId === currentUserId) return
 	dispatch(addToCart(productId))
@@ -66,7 +68,8 @@ const addNewProduct = (product) => ({
 })
 
 export const startAddNewProduct = (newProduct) => (dispatch, getState) => {
-	const vendorId = getCurrentUserId(getState()) // current user is vendor
+	const { users } = getState()
+	const vendorId = getCurrentUserId(users) /* current user is vendor */
 	const product = {
 		...newProduct,
 		productId: uuidv4(),

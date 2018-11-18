@@ -32,9 +32,9 @@ const product = produce((draft, action) => {
 			draft.available += 1
 			return
 		case EDIT_PRODUCT:
-			draft.productName =  action.product.productName,
-			draft.price = action.product.price,
-			draft.available = action.product.available
+			;(draft.productName = action.product.productName),
+				(draft.price = action.product.price),
+				(draft.available = action.product.available)
 			return
 	}
 })
@@ -78,9 +78,8 @@ export default combineReducers({
 
 export const getProduct = (state, productId) => state.byId[productId]
 
-export const getVisibleProducts = 
-	(state) => state.visibleIds.map((productId) => 
-		getProduct(state, productId))
+export const getVisibleProducts = (state) =>
+	state.visibleIds.map((productId) => getProduct(state, productId))
 
-export const getAvailable = 
-	(state, productId) => getProduct(state, productId).available
+export const getAvailable = (state, productId) =>
+	getProduct(state, productId).available

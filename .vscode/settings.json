@@ -26,5 +26,16 @@
 	// 		"no-warning-comments": [0]
 	// 	}
 	// }
+	"editor.tokenColorCustomizations": {
+    "textMateRules": [
+      {
+        "scope": "comment",
+        "settings": {
+          "fontStyle": "italic",
+					"foreground": "#00fff280",
+        }
+      }
+    ]
+  },
 
 }

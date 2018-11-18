@@ -20,6 +20,6 @@ export default produce((draft, action) => {
 		case DELETE_PRODUCT:
 			return draft.filter((id) => id !== action.productId)
 	}
-}, INITIAL_STATE)
+}, INITIAL_STATE.allIds)
 
 export const getInventoryProductIds = (state) => state

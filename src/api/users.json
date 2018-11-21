@@ -37,9 +37,9 @@
 		"buyerOrderIds": [],
 		"cartProductIds": [],
 		"cartProductQuantityById": {},
-		"vendorName": null,
-		"vendorOrderIds": null,
-		"inventoryProductIds": null
+		"vendorName": "Max Inc.",
+		"vendorOrderIds": [],
+		"inventoryProductIds": []
 	},
 	"3a0fb22e-cbdb-41c4-a10c-aa7d93ba6435": {
 		"userId": "3a0fb22e-cbdb-41c4-a10c-aa7d93ba6435",
@@ -49,9 +49,9 @@
 		"buyerOrderIds": ["25137ee0-020a-4237-aecd-8f6480a5288c"],
 		"cartProductIds": [],
 		"cartProductQuantityById": {},
-		"vendorName": null,
-		"vendorOrderIds": null,
-		"inventoryProductIds": null
+		"vendorName": "Siggy's",
+		"vendorOrderIds": [],
+		"inventoryProductIds": []
 	},
 	"df7136da-42dd-48ab-9073-ecc019bacdf1": {
 		"userId": "df7136da-42dd-48ab-9073-ecc019bacdf1",
@@ -61,9 +61,9 @@
 		"buyerOrderIds": [],
 		"cartProductIds": [],
 		"cartProductQuantityById": {},
-		"vendorName": null,
-		"vendorOrderIds": null,
-		"inventoryProductIds": null
+		"vendorName": "Ry and Fry",
+		"vendorOrderIds": [],
+		"inventoryProductIds": []
 	},
 	"85bf12a6-a2a3-4c53-b072-f54fd60cead2": {
 		"userId": "85bf12a6-a2a3-4c53-b072-f54fd60cead2",
@@ -73,9 +73,9 @@
 		"buyerOrderIds": [],
 		"cartProductIds": [],
 		"cartProductQuantityById": {},
-		"vendorName": null,
-		"vendorOrderIds": null,
-		"inventoryProductIds": null
+		"vendorName": "Go Nifty",
+		"vendorOrderIds": [],
+		"inventoryProductIds": []
 	},
 	"901117a7-d13e-4b76-8caf-a27d8aefe736": {
 		"userId": "901117a7-d13e-4b76-8caf-a27d8aefe736",
@@ -123,8 +123,8 @@
 		"buyerOrderIds": [],
 		"cartProductIds": [],
 		"cartProductQuantityById": {},
-		"vendorName": null,
-		"vendorOrderIds": null,
-		"inventoryProductIds": null
+		"vendorName": "Eggy Sue",
+		"vendorOrderIds": [],
+		"inventoryProductIds": []
 	}
 }

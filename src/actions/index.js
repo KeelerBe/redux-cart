@@ -26,7 +26,7 @@ export const getInitData = () => (dispatch) => {
 	const products = _products /* data fetching here */
 	const users = _users
 	const orders = _orders
-	const currentUserId = 'bbeec34e-d71a-4128-8502-5bfef4776b9f'
+	const currentUserId = "efdc1e4e-45ed-41e3-8581-323cdc721c67"
 	dispatch(receiveProducts(products))
 	dispatch(receiveUsers(users, currentUserId))
 	dispatch(receiveOrders(orders))

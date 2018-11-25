@@ -17,11 +17,13 @@ const ProductForm = ({
 		<div id="modal-overlay" />
 		<div id="product-form">
 			<Formik
+				
 				initialValues={{
 					productName: product.productName,
 					price: product.price,
 					available: product.available
 				}}
+				
 				onSubmit={(values, { resetForm }) => {
 					const { productId } = product
 					productId
@@ -30,6 +32,7 @@ const ProductForm = ({
 					resetForm({})
 					closeModal()
 				}}>
+				
 				{() => (
 					<div>
 						<Form>

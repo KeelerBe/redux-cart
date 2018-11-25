@@ -22,7 +22,7 @@ const receiveOrders = (orders) => ({
 	orders
 })
 
-export const getInitData = () => (dispatch) => {
+export const fetchInit = () => (dispatch) => {
 	const products = _products /* data fetching here */
 	const users = _users
 	const orders = _orders

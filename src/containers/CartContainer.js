@@ -30,20 +30,20 @@ const CartContainer = ({
 		{ products.map((product) => (
 				<ProductItem
 					key={product.productId}
-					productComponent={
-						<Product
-							productId={product.productId}
-							productName={product.productName}
-							price={product.price}
-							quantity={product.quantity}
-						/> 
-					}
 					actions={[
 						{ label: 'Remove', 
 							onClick: 
 								() => removeFromCart(product.productId, product.quantity) }
 					]}
-				/> )) }
+				>
+					<Product
+						productId={product.productId}
+						productName={product.productName}
+						price={product.price}
+						quantity={product.quantity}
+					/>  
+				</ProductItem>
+		)) }
 	</ProductsList>
 )
 

@@ -25,18 +25,18 @@ const InventoryContainer = ({ vendorName, products, deleteProduct }) => (
 				? products.map((product) => (
 					<ProductItem
 						key={product.productId}
-						productComponent={
-							<Product
-								productName={product.productName}
-								price={product.price}
-								available={product.available}
-							/>
-						}
 						actions={[
 							{ label: 'Edit', product: product },
 							{ label: 'Delete', onClick: () => deleteProduct(product.productId) }
 						]}
-					/> ))
+					>
+						<Product
+							productName={product.productName}
+							price={product.price}
+							available={product.available}
+						/> 
+					</ProductItem> ))
+					
 				: <Empty message="There are no products in your inventory." /> }
 	</ProductsList>
 )

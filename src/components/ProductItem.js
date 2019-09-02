@@ -2,9 +2,9 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import ModalHandler from '../components/ModalHandler'
 
-const ProductItem = ({ productComponent, actions }) => (
+const ProductItem = ({ actions, children }) => (
 	<div id="product-item">
-		{productComponent}
+		{children}
 		
 		{ actions.map((action) =>
 				action.label === 'Edit' 

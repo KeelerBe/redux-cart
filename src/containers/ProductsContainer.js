@@ -21,20 +21,20 @@ const ProductsContainer = ({
 		{ products.map((product) => (
 				<ProductItem
 					key={product.productId}
-					productComponent={
-						<Product
-							productName={product.productName}
-							price={product.price}
-							vendorName={product.vendorName}
-						/>
-					}
 					actions={[
 						{ label: product.available < 1 ? 'Sold out' : 'Add to Cart',
 							onClick: () => startAddToCart(product.productId),
 							disabled: product.available < 1 ||
 								cartProductIds.includes(product.productId) }
 					]}
-				/> )) }
+				> 
+					<Product
+						productName={product.productName}
+						price={product.price}
+						vendorName={product.vendorName}
+					/>
+				</ProductItem> 
+		)) }
 	</ProductsList>
 )
 

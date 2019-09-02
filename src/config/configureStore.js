@@ -3,7 +3,7 @@ import rootReducer from '../reducers'
 import thunk from 'redux-thunk'
 import logger from 'redux-logger'
 
-export default function configureStore(preloadedState) {
+export default function configureStore(preloadedState) {   
   const middlewares = [thunk]
   if (process.env.NODE_ENV !== 'production')
     middlewares.push(logger)

@@ -1,11 +1,11 @@
-import React from 'react'
+import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import ModalButton from './ModalButton'
 import Modal from './Modal'
 import ProductFormContainer from '../containers/ProductFormContainer'
 import ProductForm from './ProductForm'
 
-class ModalHandler extends React.Component {
+class ModalHandler extends Component {
 	state = { showModal: false }
 
 	openModal = () => this.setState({ showModal: true })

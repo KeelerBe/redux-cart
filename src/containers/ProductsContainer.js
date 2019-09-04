@@ -24,8 +24,8 @@ const ProductsContainer = ({
 					actions={[
 						{ label: product.available < 1 ? 'Sold out' : 'Add to Cart',
 							onClick: () => startAddToCart(product.productId),
-							disabled: product.available < 1 ||
-								cartProductIds.includes(product.productId) }
+							disabled: 
+								product.available < 1 || cartProductIds.includes(product.productId) }
 					]}
 				> 
 					<Product

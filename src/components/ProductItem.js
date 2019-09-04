@@ -24,7 +24,7 @@ const ProductItem = ({ actions, children }) => (
 )
 
 ProductItem.propTypes = {
-	productComponent: PropTypes.node.isRequired,
+	children: PropTypes.element.isRequired,
 	actions: PropTypes.arrayOf(
 		PropTypes.oneOfType([
 			PropTypes.shape({

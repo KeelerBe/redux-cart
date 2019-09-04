@@ -13,7 +13,8 @@ const Product = ({
 	<div>
 		<li><b>Product Name: </b>{productName}</li>
 		<li><b>Price: </b>&#36;{(price / 100).toFixed(2)}</li>
-		{ available >= 0 && <li><b>Available: </b>{available}</li> }
+		{ available >= 0 && 
+		    <li><b>Available: </b>{available}</li> }
 		{ quantity && renderQuantity(quantity, productId) }
 		{ vendorName && <li><b>Vendor: </b>{vendorName}</li> }
 	</div>
@@ -27,7 +28,7 @@ const renderQuantity = (quantity, productId) => (
 )
 
 Product.propTypes = {
-	productId: PropTypes.string,
+	productId: PropTypes.string.isRequired,
 	productName: PropTypes.string.isRequired,
 	price: PropTypes.number.isRequired,
 	available: PropTypes.number,

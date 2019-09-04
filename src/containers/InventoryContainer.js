@@ -19,7 +19,7 @@ const InventoryContainer = ({ vendorName, products, deleteProduct }) => (
 				label="Add new product" 
 			/>
 		}
-		subheading={<p>{vendorName}</p>}>
+		subheading={ <p>{vendorName}</p> }>
 		
 		{ products.length 
 				? products.map((product) => (

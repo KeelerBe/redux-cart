@@ -32,9 +32,9 @@ const product = produce((draft, action) => {
 			draft.available += 1
 			return
 		case EDIT_PRODUCT:
-			;(draft.productName = action.product.productName),
-				(draft.price = action.product.price),
-				(draft.available = action.product.available)
+			(draft.productName = action.product.productName),
+			(draft.price = action.product.price),
+			(draft.available = action.product.available)
 			return
 	}
 })

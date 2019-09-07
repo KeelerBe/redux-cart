@@ -1,5 +1,5 @@
 A simple shopping cart built with React and Redux
 
-[Screenshot](screenshot.jpg)
+![Screenshot](screenshot.jpg)
 
 [Demo](https://pop-cart.herokuapp.com)

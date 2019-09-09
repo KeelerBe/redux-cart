@@ -1,3 +1,4 @@
+# redux-cart
 A simple shopping cart built with React and Redux
 
 ![Screenshot](screenshot.jpg)

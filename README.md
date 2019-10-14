@@ -35,6 +35,6 @@ This projects builds on Redux's **Shopping Cart Example.** https://github.com/re
 },
 ```
 ## Screenshot and Demo
-[Demo](https://pop-cart.herokuapp.com)
+[https://pop-cart.herokuapp.com/](https://pop-cart.herokuapp.com)
 ![Screenshot](screenshot.jpg)
 

@@ -1,6 +1,10 @@
 # React Redux Cart 
 This projects builds on Redux's **Shopping Cart Example.** https://github.com/reduxjs/redux/tree/master/examples/shopping-cart. It uses a normalized data keeping the data flat. It also uses local and global selectors for computing derived data. 
 
+## Screenshot and Demo
+[https://pop-cart.herokuapp.com/](https://pop-cart.herokuapp.com)
+![Screenshot](screenshot.jpg)
+
 ## A sample user object:
 ```javascript
 "bbeec34e-d71a-4128-8502-5bfef4776b9f": {
@@ -34,7 +38,3 @@ This projects builds on Redux's **Shopping Cart Example.** https://github.com/re
 	]
 },
 ```
-## Screenshot and Demo
-[https://pop-cart.herokuapp.com/](https://pop-cart.herokuapp.com)
-![Screenshot](screenshot.jpg)
-

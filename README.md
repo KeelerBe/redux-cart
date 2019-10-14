@@ -7,7 +7,7 @@ It uses a normalized data keeping the data flat and uses the selector pattern fo
 ![Screenshot](screenshot.jpg)
 
 ## A sample user data:
-A user may be a vendor, a buyer, or both. Each user has both vendor and buyer data. 
+A **user** may be a **vendor**, a **buyer**, or both. Each user has both vendor and buyer data. 
 
 ```javascript
 "bbeec34e-d71a-4128-8502-5bfef4776b9f": {

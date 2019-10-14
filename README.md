@@ -1,5 +1,5 @@
 # React Redux Cart 
-This projects builds on Redux's (Shopping Cart Example)[https://github.com/reduxjs/redux/tree/master/examples/shopping-cart.].
+This projects builds on Redux's [Shopping Cart Example](https://github.com/reduxjs/redux/tree/master/examples/shopping-cart.).
 It uses a normalized data keeping the data flat and uses the selector pattern for computing derived data. 
 
 ## Screenshot and Demo

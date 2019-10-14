@@ -3,7 +3,7 @@ This projects builds on Redux's **Shopping Cart Example.** (https://github.com/r
 
 It uses a normalized data to keep the data flat. It also uses local and global selectors (defined with their corresponding reducers) to compute derived data. 
 
-A sample user object:
+**A sample user object:**
 ```javascript
 "bbeec34e-d71a-4128-8502-5bfef4776b9f": {
   "userId": "bbeec34e-d71a-4128-8502-5bfef4776b9f",

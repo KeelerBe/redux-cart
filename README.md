@@ -5,7 +5,9 @@ This projects builds on Redux's **Shopping Cart Example.** https://github.com/re
 [https://pop-cart.herokuapp.com/](https://pop-cart.herokuapp.com)
 ![Screenshot](screenshot.jpg)
 
-## A sample user object:
+## A sample user data:
+A user may be a vendor, a buyer, or both. Each user has both vendor and buyer data. 
+
 ```javascript
 "bbeec34e-d71a-4128-8502-5bfef4776b9f": {
   "userId": "bbeec34e-d71a-4128-8502-5bfef4776b9f",

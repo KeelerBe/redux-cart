@@ -1,7 +1,7 @@
-# React Redux Cart [Demo](https://pop-cart.herokuapp.com)
+# React Redux Cart 
 This projects builds on Redux's **Shopping Cart Example.** https://github.com/reduxjs/redux/tree/master/examples/shopping-cart
 
-It uses a normalized data keeping the data flat. It also uses local and global selectors (defined with their corresponding reducers) for computing derived data. 
+It uses a normalized data keeping the data flat. It also uses local and global selectors (defined with their corresponding reducers) for computing derived data. [Demo](https://pop-cart.herokuapp.com)
 
 **A sample user object:**
 ```javascript

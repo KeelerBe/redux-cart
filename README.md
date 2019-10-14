@@ -3,7 +3,7 @@ This projects builds on Redux's [Shopping Cart Example](https://github.com/redux
 It uses a normalized data keeping the data flat and uses selector functions for computing derived data. 
 
 ## Screenshot and demo
-[https://pop-cart.herokuapp.com/](https://pop-cart.herokuapp.com)
+[React Redux Cart Demo](https://pop-cart.herokuapp.com)
 ![Screenshot](screenshot.jpg)
 
 ## A sample user data:

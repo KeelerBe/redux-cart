@@ -14,6 +14,8 @@ A user may be a vendor, a buyer, or both. Each user has both vendor and buyer da
 	"firstName": "Rebeca",
 	"lastName": "Luettgen",
 	"email": "rebecaluettgen@yahoo.com",
+	
+	// buyer data
 	"buyerOrderIds": ["09553d5e-93f4-46d9-8a59-88d1c3268fdf"],
 	"cartProductIds": [
 		"08e01ab1-3226-4e9d-88c8-80527338becc",
@@ -23,6 +25,8 @@ A user may be a vendor, a buyer, or both. Each user has both vendor and buyer da
 		"08e01ab1-3226-4e9d-88c8-80527338becc": 2,
 		"3e59a0db-1115-4d0a-8018-b1816af37afd": 3
 	},
+	
+	// vendor data
 	"vendorName": "RL Trade",
 	"vendorOrderIds": [
 		"25137ee0-020a-4237-aecd-8f6480a5288c",
